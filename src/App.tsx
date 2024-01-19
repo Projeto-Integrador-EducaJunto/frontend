@@ -1,3 +1,4 @@
+import Sobre from "./pages/sobre/Sobre"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-    
+    <Sobre />
     </>
   )
 }
