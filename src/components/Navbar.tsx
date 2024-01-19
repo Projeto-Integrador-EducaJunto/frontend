@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Navbar() {
     return (
         <>
@@ -23,23 +25,23 @@ function Navbar() {
                             <div className="hidden sm:ml-6 ml-10 sm:block">
                                 <div className="flex space-x-6 pr-5">
 
-                                    <a href="#" className="hover:bg-blue-700 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                                    <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Postagem</a>
+                                    <Link to="" className="hover:bg-blue-700 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</Link>
+                                    <Link to="/sobre" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre</Link>
 
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex flex-shrink-0 items-center">
-                            <a href="" ><img src="./src/assets/logo-no-background.svg" className="h-8" alt="Your Company" style={{
+                            <a href="" ><img src="./src/assets/img/logo-no-background.svg" className="h-8" alt="Your Company" style={{
                                 width:"400px"
                             }} /></a>
                         </div>
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
                             <div className="hidden sm:ml-6 mr-10 sm:block">
                                 <div className="flex space-x-6 pl-5">
-                                    <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Entrar</a>
-                                    <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Cadastrar</a>
+                                    <Link to="" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Entrar</Link>
+                                    <Link to="/cadastrar" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Cadastrar</Link>
                                 </div>
                             </div>
                         </div>
@@ -49,10 +51,10 @@ function Navbar() {
 
                 <div className="sm:hidden" id="mobile-menu">
                     <div className="space-y-1 px-2 pb-3 pt-2">
-                        <a href="#" className="hover:bg-blue-700 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-                        <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Postagem</a>
-                        <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Entrar</a>
-                        <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Cadastrar</a>
+                        <Link to="" className="hover:bg-blue-700 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</Link>
+                        <Link to="" className="text-gray-300 hover:bg-blue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Postagem</Link>
+                        <Link to="" className="text-gray-300 hover:bg-blue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Entrar</Link>
+                        <Link to="" className="text-gray-300 hover:bg-blue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Cadastrar</Link>
                     </div>
                 </div>
             </nav>

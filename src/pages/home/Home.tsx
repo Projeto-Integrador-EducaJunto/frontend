@@ -1,7 +1,3 @@
-
-
-
-
 function Home() {
 
     return (
@@ -11,7 +7,7 @@ function Home() {
                 display: "flex",
                 justifyContent: "center"
             }}>
-                 <div style={{
+                <div style={{
                     width: "80vw",
                     display: "flex",
                     flexDirection: "row",
@@ -25,31 +21,31 @@ function Home() {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        fontFamily:"poly,sans-serif",
-                        color: "brown",
+                        fontFamily: "poly,sans-serif",
                         fontSize: "24px",
                     }}>
-                        <h2>Bem-vindo à EducaJunto</h2>
-                       <p>Juntos aprendemos, juntos crescemos: EducaJunto, a rede social da educação</p>
+                        <h2 className="text-2xl text-orange-500 font-bold">Bem-vinde</h2>
+                        <p className="text-2xl text-blue-500 font-bold">Juntos aprendemos, juntos crescemos: EducaJunto, a rede social da educação</p>
                     </div>
                     <div style={{
                         width: "80v",
                         display: "flex",
-                        flexDirection:"column",
-                        alignItems:"center"
+                        flexDirection: "column",
+                        alignItems: "center"
 
                     }}>
                         <img
                             src="src/assets/img/Home01.jpg"
                             alt="Imagem da pagina Home"
-                            
-                            
-                        />
+                            style={{
+                                width:"500px",
+                                borderRadius:"10px"
+                            }}
+                            />
                     </div>
                 </div>
+                
             </div>
-
-
         </>
 
     )
