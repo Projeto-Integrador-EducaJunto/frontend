@@ -3,7 +3,6 @@ import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import Home from "./pages/home/Home"
 import Sobre from "./pages/sobre/Sobre"
-import Ods from "./pages/ods/Ods"
 
 
 function App() {
@@ -11,18 +10,17 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <Navbar/>
+      <BrowserRouter>
+        <Navbar />
         <div className="min-h-[80vh] mt-16" >
           <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/sobre" element={<Sobre />} />
           </Routes>
-          <Ods />
         </div>
-      <Footer/>
-    </BrowserRouter>
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }
