@@ -31,7 +31,7 @@ function Navbar() {
                         </div>
 
                         <div className="flex flex-shrink-0 items-center">
-                            <a href="" ><img src="./src/assets/logo-color.svg" className="h-8" alt="Your Company" style={{
+                            <a href="" ><img src="./src/assets/logo-no-background.svg" className="h-8" alt="Your Company" style={{
                                 width:"400px"
                             }} /></a>
                         </div>
