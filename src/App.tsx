@@ -5,6 +5,7 @@ import Home from "./pages/home/Home"
 import Sobre from "./pages/sobre/Sobre"
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
+import { AuthProvider } from './contexts/AuthContext'
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+     <AuthProvider>
       <BrowserRouter>
         <Navbar />
         <div className="min-h-[80vh] mt-16" >
@@ -25,6 +27,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }
