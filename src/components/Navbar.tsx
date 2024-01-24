@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext } from "../contexts/AuthContext"
 
 function Navbar() {
+
+    const navigate = useNavigate()
+
+    const { handleLogout } = useContext(AuthContext)
+
+    function logout() {
+        handleLogout()
+        alert("O usuário foi desconectado com sucesso!")
+        navigate("/login")
+    }
+
     return (
         <nav className="bg-blue-500 shadow-lg">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -15,8 +28,9 @@ function Navbar() {
                     <div className="hidden sm:flex space-x-4">
                         <Link to="/home" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Home</Link>
                         <Link to="/sobre" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Sobre</Link>
-                        <div className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Entrar</div>
-                        <div className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Cadastrar</div>
+                        <Link to="/login" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Entrar</Link>
+                        <Link to="/cadastro" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Cadastrar</Link>
+                        <div className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium" onClick={logout}>Sair</div>
                     </div>
 
                     <div className="sm:hidden flex items-center">
