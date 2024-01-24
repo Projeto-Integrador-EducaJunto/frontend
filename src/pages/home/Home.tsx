@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function Home() {
-
     return (
         <div className="bg-white p-10">
             <div className="container mx-auto">
@@ -66,4 +65,3 @@ function Home() {
 }
 
 export default Home
-// Hello World 
