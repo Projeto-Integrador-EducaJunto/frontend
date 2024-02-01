@@ -17,24 +17,24 @@ function App() {
 
   return (
     <>
-     <AuthProvider>
-      <BrowserRouter>
-        <Navbar />
-        <div className="min-h-[80vh]" >
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/cadastrarTema" element={<FormTema />} />
-            <Route path="/deletarTema/:id" element={<DeletarTema />} />
-            <Route path="/listarTema" element={<ListaTemas />} />
-            <Route path="/editarTema/:id" element={<FormTema />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <div className="min-h-[80vh]" >
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/cadastrarTema" element={<FormTema />} />
+              <Route path="/deletarTema/:id" element={<DeletarTema />} />
+              <Route path="/temas" element={<ListaTemas />} />
+              <Route path="/editarTema/:id" element={<FormTema />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
       </AuthProvider>
     </>
   )
