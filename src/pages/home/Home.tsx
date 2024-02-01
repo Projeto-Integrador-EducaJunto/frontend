@@ -166,7 +166,7 @@ function Home() {
                             <div className="bg-white border rounded-lg shadow-lg p-4">
                                 <h2 className="text-2xl font-bold text-gray-800 mb-2">Lucas Oliveira</h2>
                                 <p className="text-gray-600">
-                                    Lucas é um exemplo de dedicação e superação, e ele nos conta como nossos recursos o ajudaram a aprender e crescer.
+                                    Lucas é um exemplo de dedicação e superação, e ele nogit s conta como nossos recursos o ajudaram a aprender e crescer.
                                 </p>
                             </div>
                         </div>
