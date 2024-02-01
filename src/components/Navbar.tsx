@@ -1,15 +1,19 @@
 // NavbarWithDropdown.jsx
 
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { useContext } from 'react';
 
 function NavbarWithDropdown() {
     const navigate = useNavigate();
+    const location = useLocation();
     const { handleLogout } = useContext(AuthContext);
 
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const isHomeRoute = location.pathname === '/home';
+    const navClass = isScrolled || !isHomeRoute ? 'bg-blue-500' : 'bg-transparent';
 
     function logout() {
         handleLogout();
@@ -27,7 +31,7 @@ function NavbarWithDropdown() {
     }, []);
 
     return (
-        <nav className={`fixed w-full text-white z-40 ${isScrolled ? 'duration-500 bg-blue-500 border-b' : ''}`}>
+        <nav className={`fixed w-full text-white z-40 ${isScrolled ? 'duration-500 border-b' : ''} ${navClass}`}>
             <div className="container mx-auto flex justify-center items-center py-4">
                 <div className={`flex items-center text-white'}`}>
                     <Link to="/home" className="text-white">

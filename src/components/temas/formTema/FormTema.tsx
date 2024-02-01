@@ -97,7 +97,7 @@ function FormTema() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
+        <div className="container flex flex-col items-center justify-center mx-auto py-32">
             <h1 className="text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
             </h1>
