@@ -68,7 +68,7 @@ function FormTema() {
                 ToastAlerta('O Tema foi atualizado com sucesso!',"sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    ToastAlerta('O Token Expirou!',"")
+                    ToastAlerta('O Token Expirou!',"info")
                     handleLogout();
                 } else {
                     ToastAlerta('Erro ao atualizar o tema.',"erro")
