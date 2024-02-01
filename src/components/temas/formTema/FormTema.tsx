@@ -110,6 +110,7 @@ function FormTema() {
                         placeholder="Descreva aqui seu tema"
                         name='nome'
                         className="border-2 border-slate-700 rounded p-2"
+                        required
                         value={tema.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
@@ -121,6 +122,7 @@ function FormTema() {
                         placeholder="Descreva aqui seu tema"
                         name='descricao'
                         className="border-2 border-slate-700 rounded p-2"
+                        required
                         value={tema.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
