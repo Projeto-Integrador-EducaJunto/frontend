@@ -54,6 +54,16 @@ function NavbarWithDropdown() {
                                 Blog
                             </Link>
                         </li>
+                        <li className="mr-6">
+                            <Link to="/listarTema">
+                                Temas
+                            </Link>
+                        </li>
+                        <li className="mr-6">
+                            <Link to="/cadastrarTema">
+                                Cadastrar Tema
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <button className={` bg-orange-500 text-white font-bold rounded-full py-2 px-8 hover:scale-125 duration-500 ml-5 z-50`}>
