@@ -55,7 +55,7 @@ function NavbarWithDropdown() {
                             </Link>
                         </li>
                         <li className="mr-6">
-                            <Link to="/listarTema">
+                            <Link to="/temas">
                                 Temas
                             </Link>
                         </li>
