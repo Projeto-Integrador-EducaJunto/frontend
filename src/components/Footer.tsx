@@ -1,32 +1,68 @@
-import { FacebookLogo, GithubLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { Link } from "react-router-dom";
 
 function Footer() {
-    let data = new Date().getFullYear();
-
     return (
-        <footer className="bg-blue-500 text-white">
-            <div className="container mx-auto px-4 py-8">
-                <h4 className="text-3xl font-semibold text-center mb-4">
-                    Juntos aprendemos, juntos crescemos: EducaJunto, a rede social da educação!
-                </h4>
-
-                <div className="flex justify-center space-x-4 my-4">
-                    <a href="https://github.com/conteudoGeneration/" target="_blank" rel="noopener noreferrer">
-                        <GithubLogo size={32} />
-                    </a>
-                    <a href="https://www.linkedin.com/school/generationbrasil" target="_blank" rel="noopener noreferrer">
-                        <LinkedinLogo size={32} />
-                    </a>
-                    <a href="https://www.instagram.com/generationbrasil" target="_blank" rel="noopener noreferrer">
-                        <InstagramLogo size={32} />
-                    </a>
-                    <a href="https://www.facebook.com/generationbrasil" target="_blank" rel="noopener noreferrer">
-                        <FacebookLogo size={32} />
-                    </a>
-                </div>
-
-                <div className="text-center text-sm font-semibold">
-                    Copyright © {data} EducaJunto.
+        <footer className="bg-blue-500">
+            <div className="container mx-auto px-8">
+                <div className="w-full flex flex-row py-6">
+                    <div className="flex-1 mb-6 text-white mr-20">
+                        <Link to="/home" className="text-white">
+                            <img src="src\assets\img\logoNavbar.svg" className="h-10" />
+                        </Link>
+                    </div>
+                    <div className="flex-1">
+                        <p className="uppercase text-white md:mb-6 font-bold">Links</p>
+                        <ul className="list-reset mb-6">
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">FAQ</a>
+                            </li>
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Ajuda</a>
+                            </li>
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Suporte</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="flex-1">
+                        <p className="uppercase text-white md:mb-6" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>Legal</p>
+                        <ul className="list-reset mb-6">
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Termos</a>
+                            </li>
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Privacidade</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="flex-1">
+                        <p className="uppercase text-white md:mb-6" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>Social</p>
+                        <ul className="list-reset mb-6">
+                            <li className="mt-2 block mr-2 ">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Facebook</a>
+                            </li>
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Linkedin</a>
+                            </li>
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="flex-1">
+                        <p className="uppercase text-white md:mb-6" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>Institucional</p>
+                        <ul className="list-reset mb-6">
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Blog Oficial</a>
+                            </li>
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Sobre Nós</a>
+                            </li>
+                            <li className="mt-2 block mr-2">
+                                <a href="#" className="no-underline hover:underline text-gray-300 hover:text-white">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </footer>

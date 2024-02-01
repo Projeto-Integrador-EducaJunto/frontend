@@ -1,49 +1,67 @@
-import { useContext } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { AuthContext } from "../contexts/AuthContext"
+// NavbarWithDropdown.jsx
 
-function Navbar() {
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
+import { useContext } from 'react';
 
-    const navigate = useNavigate()
+function NavbarWithDropdown() {
+    const navigate = useNavigate();
+    const { handleLogout } = useContext(AuthContext);
 
-    const { handleLogout } = useContext(AuthContext)
+    const [isScrolled, setIsScrolled] = useState(false);
 
     function logout() {
-        handleLogout()
-        alert("O usuário foi desconectado com sucesso!")
-        navigate("/login")
+        handleLogout();
+        alert("O usuário foi desconectado com sucesso!");
+        navigate("/login");
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <nav className="bg-blue-500 shadow-lg">
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center py-4">
-
-                    <div className="flex items-center">
-                        <a href="/" >
-                            <img src="./src/assets/img/logoNavbar.svg" alt="Logo" className="h-12" />
-                        </a>
-                    </div>
-
-                    <div className="hidden sm:flex space-x-4">
-                        <Link to="/home" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Home</Link>
-                        <Link to="/sobre" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Sobre</Link>
-                        <Link to="/login" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Entrar</Link>
-                        <Link to="/cadastro" className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium">Cadastrar</Link>
-                        <div className="text-white hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-md font-medium" onClick={logout}>Sair</div>
-                    </div>
-
-                    <div className="sm:hidden flex items-center">
-                        <button type="button" className="text-gray-200 hover:text-white focus:outline-none focus:text-white">
-                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-                            </svg>
-                        </button>
-                    </div>
+        <nav className={`fixed w-full text-white z-40 ${isScrolled ? 'duration-500 bg-blue-500 border-b' : ''}`}>
+            <div className="container mx-auto flex justify-center items-center py-4">
+                <div className={`flex items-center text-white'}`}>
+                    <Link to="/home" className="text-white">
+                        <img src="src\assets\img\logoNavbar.svg" className="h-10" />
+                    </Link>
+                    <ul className="flex items-center ml-20 font-bold">
+                        <li className="mr-6">
+                            <Link to="/home">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="mr-6">
+                            <Link to="/sobre">
+                                Sobre nós
+                            </Link>
+                        </li>
+                        <li className="mr-6">
+                            <Link to="/cadastro">
+                                Faça parte
+                            </Link>
+                        </li>
+                        <li className="mr-6">
+                            <Link to="/sobre">
+                                Blog
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
+                <button className={` bg-orange-500 text-white font-bold rounded-full py-2 px-8 hover:scale-125 duration-500 ml-5 z-50`}>
+                    Doe
+                </button>
             </div>
         </nav>
-    )
+    );
 }
 
-export default Navbar
+export default NavbarWithDropdown;
