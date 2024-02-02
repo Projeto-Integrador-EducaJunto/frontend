@@ -157,7 +157,7 @@ function FormPostagem() {
     const carregandoTema = tema.descricao === ""
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
+        <div className="container flex flex-col items-center justify-center mx-auto p-16">
             <h1 className="text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Postagem' : 'Editar Postagem'}
             </h1>
