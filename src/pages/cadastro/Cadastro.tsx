@@ -62,26 +62,26 @@ function Cadastro() {
 
     } else {
       alert('Dados inconsistentes. Verifique as informações de cadastro.')
-      setUsuario({ ...usuario, senha: "" }) // Reinicia o campo de Senha
-      setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
+      setUsuario({ ...usuario, senha: "" }) 
+      setConfirmaSenha("")                  
     }
   }
 
   return (
     <>
-      <div className="grid text-white h-screen place-items-center  font-bold fundoCadastro">
+      <div className=" text-white h-screen place-items-center  font-bold fundoCadastro">
 
         <div className=' flex justify-center container mx-auto px-10 h-screen w-1/2 items-center '>
           <form className='flex flex-col items-center  w-2/3 gap-3 bg-opacity-50 bg-orange-300 p-4 rounded-lg' onSubmit={cadastrarNovoUsuario}>
             <h2 className='text-white text-5xl'>Cadastro</h2>
-            <div className="flex flex-col w-full ">
+            <div className="flex flex-col w-full">
               <label htmlFor="nome">Nome</label>
               <input
                 type="text"
                 id="nome"
                 name="nome"
                 placeholder="Nome"
-                className="border-2 border-grey-900 rounded p-2"
+                className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded p-2"
                 value={usuario.nome}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
@@ -93,7 +93,7 @@ function Cadastro() {
                 id="usuario"
                 name="usuario"
                 placeholder="Usuario"
-                className="border-2 border-slate-700 rounded p-2"
+                className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded p-2"
                 value={usuario.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
@@ -105,7 +105,7 @@ function Cadastro() {
                 id="foto"
                 name="foto"
                 placeholder="Foto"
-                className="border-2 border-slate-700 rounded p-2"
+                className="border-2  text-slate-500 border-orange-200  hover:bg-blue-100  hover:border-blue-300 rounded p-2"
                 value={usuario.foto}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
@@ -117,7 +117,7 @@ function Cadastro() {
                 id="senha"
                 name="senha"
                 placeholder="Senha"
-                className="border-2 border-slate-700 rounded p-2"
+                className="border-2 text-slate-500 border-orange-200 hover:bg-blue-100 hover:border-blue-300 rounded p-2"
                 value={usuario.senha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
@@ -129,16 +129,16 @@ function Cadastro() {
                 id="confirmarSenha"
                 name="confirmarSenha"
                 placeholder="Confirmar Senha"
-                className="border-2 border-slate-700 rounded p-2"
+                className="border-2 text-slate-500 border-orange-200 hover:bg-blue-100 hover:border-blue-300 rounded p-2 "
                 value={confirmaSenha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
               />
             </div>
-            <div className="flex justify-around w-full gap-8">
-              <button className='rounded text-white bg-orange-600 hover:bg-red-700 w-1/2 py-2' onClick={back}>
+            <div className="flex justify-around w-3/4 gap-10 opacity-90">
+              <button className='rounded-full shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 w-1/2 py-2' onClick={back}>
                 Cancelar
               </button>
-              <button className='rounded text-white bg-blue-800  hover:bg-blue-600 w-1/2 py-2' type='submit'>
+              <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-blue-500 hover:bg-blue-600 w-1/2 py-2' type='submit'>
                 Cadastrar
               </button>
             </div>
