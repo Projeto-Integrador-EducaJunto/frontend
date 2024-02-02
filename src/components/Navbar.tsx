@@ -14,6 +14,9 @@ function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
     const toggleDropdown = () => setShowDropdown(!showDropdown);
 
+    const shouldHideNavbar = location.pathname === '/login' || location.pathname === '/cadastro';
+    if (shouldHideNavbar) return null;
+
     function logout() {
         handleLogout();
         alert("O usuário foi desconectado com sucesso!");
