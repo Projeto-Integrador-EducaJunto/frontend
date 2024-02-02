@@ -28,6 +28,12 @@ function App() {
               <Route path="/deletarTema/:id" element={<DeletarTema />} />
               <Route path="/temas" element={<ListaTemas />} />
               <Route path="/editarTema/:id" element={<FormTema />} />
+
+              <Route path="/postagens" element={<Login />} />
+              <Route path="/cadastrarPostagem" element={<Login />} />
+              <Route path="/editarPostagem/:id" element={<Login />} />
+              <Route path="/deletarPostagem/:id" element={<Login />} />
+
             </Routes>
           </div>
           <Footer />
