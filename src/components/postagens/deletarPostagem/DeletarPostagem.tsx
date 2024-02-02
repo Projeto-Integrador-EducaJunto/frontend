@@ -55,7 +55,7 @@ function DeletarPostagem() {
                 }
             })
 
-            ToastAlerta('Postagem apagado com sucesso', "sucesso")
+            ToastAlerta('Postagem apagada com sucesso', "sucesso")
 
         } catch (error) {
             ToastAlerta('Erro ao apagar o Postagem', "erro")
@@ -65,13 +65,13 @@ function DeletarPostagem() {
     }
     return (
         <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar Postagem</h1>
+            <h1 className='text-4xl text-center p-32'>Deletar Postagem</h1>
 
             <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar o Postagem a seguir?</p>
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Postagem</header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{Postagem.conteudo}</p>
+                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Postagem {Postagem.id}</header>
+                <p className='p-8 text-3xl bg-slate-200 h-full text-black'>{Postagem.conteudo}</p>
                 <p className='p-8 text-3xl bg-slate-200 h-full'>{Postagem.anexo}</p>
                 <div className="flex">
                     <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
