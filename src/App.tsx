@@ -9,6 +9,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import FormTema from "./components/temas/formTema/FormTema"
 import DeletarTema from "./components/temas/deletarTema/DeletarTema"
 import ListaTemas from "./components/temas/listaTemas/ListaTemas"
+import FormPostagem from "./components/postagem/formPostagem/FormPostagem"
 
 function App() {
 
@@ -30,9 +31,9 @@ function App() {
               <Route path="/editarTema/:id" element={<FormTema />} />
 
               <Route path="/postagens" element={<Login />} />
-              <Route path="/cadastrarPostagem" element={<Login />} />
-              <Route path="/editarPostagem/:id" element={<Login />} />
-              <Route path="/deletarPostagem/:id" element={<Login />} />
+              <Route path="/cadastrarPostagem" element={<FormPostagem />} />
+              <Route path="/editarPostagem/:id" element={<FormPostagem />} />
+              <Route path="/deletarPostagem/:id" element={<DeletarTema />} />
 
             </Routes>
           </div>
