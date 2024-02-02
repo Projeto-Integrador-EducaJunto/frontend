@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
@@ -69,25 +69,25 @@ function Cadastro() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold fundoCadastro">
+      <div className="grid text-white h-screen place-items-center  font-bold fundoCadastro">
 
-        <div className='w-full flex items-center justify-start'>
-          <form className='flex justify-center items-center flex-col w-2/3 gap-3 bg-gray-200 p-4 rounded-lg' onSubmit={cadastrarNovoUsuario}>
-            <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
-            <div className="flex flex-col w-full">
+        <div className=' flex justify-center container mx-auto px-10 h-screen w-1/2 items-center '>
+          <form className='flex flex-col items-center  w-2/3 gap-3 bg-opacity-50 bg-orange-300 p-4 rounded-lg' onSubmit={cadastrarNovoUsuario}>
+            <h2 className='text-white text-5xl'>Cadastro</h2>
+            <div className="flex flex-col w-full ">
               <label htmlFor="nome">Nome</label>
               <input
                 type="text"
                 id="nome"
                 name="nome"
                 placeholder="Nome"
-                className="border-2 border-slate-700 rounded p-2"
+                className="border-2 border-grey-900 rounded p-2"
                 value={usuario.nome}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
             </div>
             <div className="flex flex-col w-full">
-              <label htmlFor="usuario">Usuario</label>
+              <label htmlFor="usuario">E-mail de usuário</label>
               <input
                 type="text"
                 id="usuario"
@@ -99,7 +99,7 @@ function Cadastro() {
               />
             </div>
             <div className="flex flex-col w-full">
-              <label htmlFor="foto">Foto</label>
+              <label htmlFor="foto">Foto (link)</label>
               <input
                 type="text"
                 id="foto"
@@ -111,7 +111,7 @@ function Cadastro() {
               />
             </div>
             <div className="flex flex-col w-full">
-              <label htmlFor="senha">Senha</label>
+              <label htmlFor="senha">Senha (min. 8 dígitos)</label>
               <input
                 type="password"
                 id="senha"

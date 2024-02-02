@@ -37,17 +37,17 @@ function Login() {
   return (
     <>
     
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
         <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
           <h2 className="text-slate-900 text-5xl">Entrar</h2>
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full round-full">
             <label htmlFor="usuario">Usuário</label>
             <input
               type="text"
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
+              className="border-none border-slate-700 rounded-2xl p-2"
               value={usuarioLogin.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -59,7 +59,7 @@ function Login() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="border-none border-slate-700 rounded-2xl p-2"
               value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -76,7 +76,7 @@ function Login() {
               width="24"
               visible={true}
             /> :
-              <span>Entrar</span>
+              <span>Iniciar sessão</span>
             }
           </button>
 
