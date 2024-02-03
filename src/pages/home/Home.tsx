@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 function Home() {
     const settings = {
@@ -172,9 +173,11 @@ function Home() {
                         </div>
                     </div>
                     <div className="flex items-center justify-center mt-6">
-                        <button className="mx-auto lg:mx-0 hover:underline bg-blue-500 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
-                            Leia mais histórias
-                        </button>
+                        <Link to={"/historias"}>
+                            <button className="mx-auto lg:mx-0 hover:underline bg-blue-500 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
+                                Leia mais histórias
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>

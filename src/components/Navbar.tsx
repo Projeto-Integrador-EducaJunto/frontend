@@ -78,11 +78,14 @@ function NavbarWithDropdown() {
                                 Cadastrar Postagem
                             </Link>
                         </li>
+                        <li className="mr-6">
+                            <button onClick={logout}>sair</button>
+                        </li>
                     </ul>
                 </div>
-                <button className={` bg-orange-500 text-white font-bold rounded-full py-2 px-8 hover:scale-125 duration-500 ml-5 z-50`}>
+                {/* <button className={` bg-orange-500 text-white font-bold rounded-full py-2 px-8 hover:scale-125 duration-500 ml-5 z-50`}>
                     Doe
-                </button>
+                </button> */}
             </div>
         </nav>
     );
