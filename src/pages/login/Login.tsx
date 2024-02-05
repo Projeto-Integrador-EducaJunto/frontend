@@ -37,13 +37,6 @@ function Login() {
   return (
     <>
 
-<<<<<<< HEAD
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="text-slate-900 text-5xl">Entrar</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuário</label>
-=======
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-blue-400 fundoCadastro">
         <div className='text-white mx-80  backdrop-blur-sm'>
           <h1 className="my-4  text-6xl font-bold leading-tight text-orange-500" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }} >
@@ -57,7 +50,6 @@ function Login() {
           <h2 className="text-white text-5xl">Entrar</h2>
           <div className="flex flex-col w-2/3 round-full">
             <label htmlFor="usuario">E-mail de usuário</label>
->>>>>>> 0ad3906c20064d1485cdfe12b4621d3669e9d1a9
             <input
               type="text"
               id="usuario"
