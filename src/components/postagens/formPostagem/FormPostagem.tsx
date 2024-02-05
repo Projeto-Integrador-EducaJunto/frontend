@@ -157,33 +157,34 @@ function FormPostagem() {
     const carregandoTema = tema.descricao === ""
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto p-16">
+        <div className="container flex flex-col items-center justify-center w-7/12 mx-auto p-16 h-76 gap-4
+         bg-blue-500 bg-opacity-45 text-black rounded-lg">
             <h1 className="text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Postagem' : 'Editar Postagem'}
             </h1>
 
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaPostagem}>
+            <form className="" onSubmit={gerarNovaPostagem}>
 
                 
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">conteudo da Postagem</label>
+                <div className="flex flex-col gap-2 ">
+                    <label htmlFor="descricao">Conteúdo da Postagem</label>
                     <input
                         type="text"
-                        placeholder="O conteudo Da Sua Postagem"
+                        placeholder="Escreva o conteúdo da sua postagem"
                         name='conteudo'
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-slate-700 rounded p-2 drop-shadow-md"
                         value={postagem.conteudo}
                         required
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">anexo da Postagem</label>
+                    <label htmlFor="descricao">Anexo da Postagem</label>
                     <input
                         type="text"
-                        placeholder="O anexo Da Sua Postagem"
+                        placeholder= "Insira o anexo da sua postagem"
                         name='anexo'
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-slate-700 rounded p-2 drop-shadow-md"
                         value={postagem.anexo}
                         required
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -192,7 +193,7 @@ function FormPostagem() {
 
                 <div className="flex flex-col gap-2">
                     <p>Tema da postagem</p>
-                    <select name="tema" id="tema" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
+                    <select name="tema" id="tema" className='border-2 p-2 border-slate-800 rounded drop-shadow-md' onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
                         <option value="" selected disabled>Selecione um tema</option>
                         {temas.map((tema) => (
                             <>
@@ -203,8 +204,8 @@ function FormPostagem() {
                 </div>
                 <button
                 disabled={carregandoTema}
-                    className="rounded disabled:bg-slate-200 text-slate-100 bg-indigo-400 
-                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                    className="rounded text-white text-lg  h-12 bg-orange-300 w-full mt-5 
+                               hover:bg-blue-500 py-3 mx-auto flex justify-center drop-shadow-md"
                     type="submit">
 
                     {isLoading ?
