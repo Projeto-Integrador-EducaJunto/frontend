@@ -5,7 +5,7 @@ import Postagem from '../../../models/Postagem';
 import { buscar, deletar } from '../../../services/Service';
 import { ToastAlerta } from '../../../utils/ToastAlerts';
 
-import './DeletarPostagem.css'; 
+import './DeletarPostagem.css';
 
 function DeletarPostagem() {
   const [postagem, setPostagem] = useState<Postagem>({} as Postagem);
@@ -19,7 +19,7 @@ function DeletarPostagem() {
 
   async function buscarPorId(id: string) {
     try {
-      await buscar(`/postagems/${id}`, setPostagem, {
+      await buscar(`/postagens/${id}`, setPostagem, {
         headers: {
           Authorization: token,
         },
@@ -46,12 +46,12 @@ function DeletarPostagem() {
   }, [id]);
 
   function retornar() {
-    navigate('/postagems');
+    navigate('/postagens');
   }
 
   async function deletarPostagem() {
     try {
-      await deletar(`/postagems/${id}`, {
+      await deletar(`/postagens/${id}`, {
         headers: {
           Authorization: token,
         },

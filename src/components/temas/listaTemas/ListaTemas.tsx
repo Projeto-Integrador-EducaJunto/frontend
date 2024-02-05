@@ -23,7 +23,7 @@ function ListaTemas() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                ToastAlerta('O token Expirou!' , "erro")
+                ToastAlerta('O token Expirou!', "erro")
                 handleLogout()
             }
         }
@@ -37,24 +37,24 @@ function ListaTemas() {
     }, [token])
 
     useEffect(() => {
-        buscarTemas()    
+        buscarTemas()
     }, [temas.length])
-    
+
     return (
         <>
-        {temas.length === 0 && (
-            <DNA
-            visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
-            wrapperStyle={{}}
-            wrapperClass="dna-wrapper mx-auto"
-        />
-        )}
+            {temas.length === 0 && (
+                <DNA
+                    visible={true}
+                    height="200"
+                    width="200"
+                    ariaLabel="dna-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="dna-wrapper mx-auto"
+                />
+            )}
             <div className="flex justify-center w-full py-32">
                 <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
                         <>
                             {temas.map((tema) => (
                                 <>
