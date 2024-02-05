@@ -7,18 +7,20 @@ interface CardPostagemProps {
 
 function CardPostagem({postagem}: CardPostagemProps) {
   return (
-    <div className='border-blue-100 border flex flex-col rounded overflow-hidden justify-between'>
+    <div className='border-blue-100 border flex flex-col rounded-2xl overflow-hidden justify-between'>
       <div>
         <div className="flex w-full bg-gradient-to-b from-blue-500 to-blue-500 text-white py-2 px-4 items-center gap-4">
           <img src={postagem.usuario?.foto} className='h-12 rounded-full ' alt="" />
           <h3 className='text-lg font-bold text-center uppercase '>{postagem.usuario?.nome}</h3>
         </div>
         <div className='p-4 '>
-          <h4 className='text-lg font-semibold uppercase'>Postagem {postagem.id}</h4>
-          <p>{postagem.conteudo}</p>
-          <p>Anexo: {postagem.anexo}</p>
-          <p>Tema: {postagem.tema?.nome}</p>
-          <p>Data: {new Intl.DateTimeFormat(undefined, {
+          <p className=' text-blue-400 font-bold text-3xl'>{postagem.tema?.nome}</p>
+          <p className=' text-orange-400 font-bold my-4'>{postagem.tema?.descricao}</p>
+          <hr className="border-slate-400 w-full" />
+          <p >{postagem.conteudo}</p>
+          <p className='font-bold underline my-4 '>Anexo: {postagem.anexo}</p>
+          <hr className="border-slate-400 w-full" />
+          <p >Data: {new Intl.DateTimeFormat(undefined, {
                     dateStyle: 'full',
                     timeStyle: 'medium',
                     timeZone: 'America/Sao_Paulo'

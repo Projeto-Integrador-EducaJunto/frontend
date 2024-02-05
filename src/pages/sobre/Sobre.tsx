@@ -3,19 +3,19 @@ import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 function Sobre() {
     return (
         <>
-            <div className="w-full h-full flex flex-col p-10 bg-blue-100">
+            <div className="w-full h-full flex flex-col p-10">
 
-                <h2 className="text-center text-3xl  text-blue-500 font-bold py-5 mx-3.5 my-10 bg-slate-100 shadow-lg shadow-blue-300 rounded-2xl ">
+                <h2 className="flex justify-center text-center text-3xl  text-blue-500 font-bold py-5 mx-3.5 my-10 bg-slate-100 shadow-lg shadow-blue-300 rounded-2xl ">
                     Quem Somos
                 </h2>
-                <div className="items-center text-justify text-2xl font-bold text-slate-700 rounded-lg mx-20 mb-10 w-1/2 h-2/1bg-opacity-50"  >
+                <div className="text-justify text-2xl font-bold text-slate-700 mx-20 mb-10 "  >
                     <p className="my-4 mx-14">
                         Somos uma rede social educacional, que conecta estudantes, educadores e entusiastas da aprendizagem em um ambiente colaborativo. Promovemos a troca de conhecimento e experiências para fortalecer a comunidade educacional.
                     </p>
                     <p className="my-4 mx-14">
                         Nossa plataforma busca o aumento do aprendizado através da colaboração, a empatia e o respeito mútuo. Cada interação é uma oportunidade de crescimento, e cada pergunta é uma semente que pode florescer em novas descobertas. Estamos aqui para criar uma rede de aprendizado onde todos se sintam motivados a participar ativamente, independentemente do nível de conhecimento inicial.
                     </p>
-                    <p className="my-8 mx-14">
+                    <p className="text-center my-8 mx-14 text-blue-500">
                         Junte-se a nós para aprender, crescer e se desenvolver coletivamente!
                     </p>
                 </div>
@@ -81,7 +81,7 @@ function Sobre() {
                         </div>
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
-                        <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <img src="src/assets/img/pesobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-orange-500">Pedro Bernardo</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
