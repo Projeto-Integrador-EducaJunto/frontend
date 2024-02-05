@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { useContext } from 'react';
@@ -11,11 +11,11 @@ function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const isHomeRoute = location.pathname === '/home';
     const navClass = isScrolled || !isHomeRoute ? 'bg-blue-500' : 'bg-transparent';
+    const dropdownRef = useRef(null);
     const [showDropdown, setShowDropdown] = useState(false);
     const toggleDropdown = () => setShowDropdown(!showDropdown);
 
     const shouldHideNavbar = location.pathname === '/login' || location.pathname === '/cadastro';
-    if (shouldHideNavbar) return null;
 
     function logout() {
         handleLogout();
@@ -32,6 +32,21 @@ function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        const handleClickOutside = (event: { target: any; }) => {
+            if (dropdownRef.current && !(dropdownRef.current as HTMLElement).contains(event.target)) {
+                setShowDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    if (shouldHideNavbar) return null;
     return (
         <nav className={`fixed w-full text-white z-40 ${isScrolled ? 'duration-500 border-b' : ''} ${navClass}`}>
             <div className="container mx-auto flex justify-center items-center py-4">
@@ -74,7 +89,7 @@ function Navbar() {
                         )}
                     </button>
                     {showDropdown && (
-                        <div className="absolute right-1 rounded-md shadow-lg bg-white">
+                        <div className="absolute right-1 rounded-md shadow-lg bg-white" ref={dropdownRef}>
                             <div className="py-1 w-32">
                                 {usuario.token ? (
                                     <>
