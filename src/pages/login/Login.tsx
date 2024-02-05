@@ -4,6 +4,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import './Login.css';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
+import Usuario from '../../models/Usuario';
 
 function Login() {
 
@@ -15,11 +16,29 @@ function Login() {
     {} as UsuarioLogin
   )
 
+  const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
+
   useEffect(() => {
     if (usuario.token !== "") {
       navigate("/home")
     }
   }, [usuario])
+
+  useEffect(() => {
+    if (usuarioResposta.id !== 0) {
+      back()
+    }
+  }, [usuarioResposta])
+
+  function back() {
+    navigate('/home')
+  }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuarioLogin({
@@ -72,10 +91,14 @@ function Login() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
+
+          <div className="flex justify-around w-2/4 gap-5 opacity-90">
+          <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 hover:bg-orange-600 w-1/2 py-2' onClick={back}>
+              Cancelar
+            </button>
           <button
             type='submit'
-            className="rounded-full  shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 hover:bg-orange-600 w-2/6 py-2">
-
+            className="flex justify-center rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-blue-500 hover:bg-blue-600 w-1/2 py-2">
             {isLoading ? <RotatingLines
               strokeColor="white"
               strokeWidth="5"
@@ -86,7 +109,7 @@ function Login() {
               <span>Iniciar sessão</span>
             }
           </button>
-
+        </div>
           <hr className="border-blue-400 w-full" />
 
           <p  className=' backdrop-blur-sm'>
@@ -95,7 +118,6 @@ function Login() {
               Cadastre-se
             </Link>
           </p>
-
         </form>
 
       </div>
