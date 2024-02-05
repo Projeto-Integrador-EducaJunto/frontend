@@ -52,9 +52,10 @@ function ListaTemas() {
             wrapperClass="dna-wrapper mx-auto"
         />
         )}
-            <div className="flex justify-center w-full py-32">
-                <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+       
+            <div className="flex justify-items-center justify-center w-sv h-sv p-32">
+                <div className="container flex justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                         <>
                             {temas.map((tema) => (
                                 <>
@@ -65,6 +66,7 @@ function ListaTemas() {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
