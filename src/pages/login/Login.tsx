@@ -46,9 +46,9 @@ function Login() {
             Conecte-se e seja parte da democratização do saber.
           </p>
         </div>
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4 bg-blue-500 bg-opacity-55 text-white  p-4 rounded-lg" onSubmit={login}>
+        <form className="flex justify-center items-center flex-col w-2/3  h-full gap-4 bg-blue-500 bg-opacity-55 text-white  p-4 " onSubmit={login}>
           <h2 className="text-white text-5xl">Entrar</h2>
-          <div className="flex flex-col w-full round-full">
+          <div className="flex flex-col w-2/3 round-full">
             <label htmlFor="usuario">Usuário</label>
             <input
               type="text"
@@ -60,21 +60,21 @@ function Login() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-2/3">
             <label htmlFor="senha">Senha</label>
             <input
               type="password"
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-none border-slate-700 rounded-2xl p-2"
+              className="border-none  border-slate-700 rounded-2xl p-2"
               value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <button
             type='submit'
-            className="rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-orange-500 hover:bg-orange-600 w-1/2 py-2">
+            className="rounded-full  shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 hover:bg-orange-600 w-2/3 py-2">
 
             {isLoading ? <RotatingLines
               strokeColor="white"
@@ -87,7 +87,7 @@ function Login() {
             }
           </button>
 
-          <hr className="border-slate-800 w-full" />
+          <hr className="border-blue-400 w-full" />
 
           <p>
             Ainda não tem uma conta?{' '}

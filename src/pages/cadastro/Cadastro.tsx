@@ -117,7 +117,7 @@ function Cadastro() {
                 id="senha"
                 name="senha"
                 placeholder="Senha"
-                className="border-2 text-slate-500 border-orange-200 hover:bg-blue-100 hover:border-blue-300 rounded-md p-2"
+                className="border-2 text-slate-500 border-orange-200 hover:bg-blue-100 hover:border-blue-300 rounded-md p-2 "
                 value={usuario.senha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
