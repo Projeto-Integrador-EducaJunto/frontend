@@ -129,7 +129,7 @@ function FormPostagem() {
                     ToastAlerta('O Token Expirou!', "info")
                     handleLogout();
                 } else {
-                    ToastAlerta('Erro ao atualizar o Postagem.', "erro")
+                    ToastAlerta('Erro ao atualizar o Postagem.', "erro") 
                 }
 
             }
@@ -152,7 +152,7 @@ function FormPostagem() {
 
         setIsLoading(false)
         retornar()
-    }
+    } 
 
     const carregandoTema = tema.descricao === ""
 

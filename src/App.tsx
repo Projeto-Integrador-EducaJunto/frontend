@@ -13,6 +13,8 @@ import FormPostagem from "./components/postagens/formPostagem/FormPostagem"
 import ListaPostagens from "./components/postagens/listaPostagens/listaPostagens"
 import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem"
 import Historias from "./pages/historias/Historias"
+import Perfil from "./pages/perfil/Perfil"
+import Atualizar from "./pages/atualizar/Atualizar"
 
 function App() {
 
@@ -23,11 +25,13 @@ function App() {
           <Navbar />
           <div className={`min-h-[80vh]`}>
             <Routes>
-              <Route path="/" element={<Login />} />
-
+              <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/atualizarPerfil/:id" element={<Atualizar />} />
               <Route path="/home" element={<Home />} />
+
+              <Route path="/perfil" element={<Perfil />} />
               <Route path="/sobre" element={<Sobre />} />
 
               <Route path="/cadastrarTema" element={<FormTema />} />
