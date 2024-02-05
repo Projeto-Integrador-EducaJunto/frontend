@@ -3,12 +3,12 @@ import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 function Sobre() {
     return (
         <>
-            <div className="w-full h-full flex flex-col p-10">
+            <div className="w-full h-full flex flex-col p-10 bg-blue-100">
 
-                <h2 className="text-center text-4xl   text-blue-500 font-bold py-5 mx-3.5 my-10 bg-blue-200 rounded-lg shadow">
+                <h2 className="text-center text-3xl  text-blue-500 font-bold py-5 mx-3.5 my-10 bg-slate-100 shadow-lg shadow-blue-300 rounded-2xl ">
                     Quem Somos
                 </h2>
-                <div className="items-center text-justify text-xl rounded-lg mx-20 mb-10 w-1/2 h-2/1bg-opacity-50">
+                <div className="items-center text-justify text-2xl font-bold text-slate-700 rounded-lg mx-20 mb-10 w-1/2 h-2/1bg-opacity-50"  >
                     <p className="my-4 mx-14">
                         Somos uma rede social educacional, que conecta estudantes, educadores e entusiastas da aprendizagem em um ambiente colaborativo. Promovemos a troca de conhecimento e experiências para fortalecer a comunidade educacional.
                     </p>
@@ -20,53 +20,53 @@ function Sobre() {
                     </p>
                 </div>
 
-                <h2 className="text-3xl text-blue-500 font-bold text-center py-5 mx-3.5 bg-blue-200 rounded-lg shadow">
+                <h2 className="text-3xl text-blue-500 font-bold text-center py-5 mx-3.5 bg-slate-100 rounded-lg shadow-lg shadow-blue-300">
                     Nosso Time
                 </h2>
                 <div className="flex flex-wrap justify-center items-center mx-2 my-10 gap-10">
-                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-200  border-2 border-gray-300 shadow-md text-white rounded-md  p-4">
+                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
                         <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-orange-500">Bruno Cesar</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
-                            <a href="https://github.com/VictoriaCM/" target="_blank">
+                            <a href="https://github.com/Cesar-bruno/" target="_blank">
                                 <GithubLogo size={30} color="#030303" weight='fill' />
                             </a>
-                            <a href="https://www.linkedin.com/in/victória-moraes/" target="_blank">
+                            <a href="https://www.linkedin.com/in/bcssilva/" target="_blank">
                                 <LinkedinLogo size={30} color="#030303" weight='fill' />
                             </a>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-200  border-2 border-gray-300 shadow-md text-white rounded-md  p-4">
-                        <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
+                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
+                        <img src="src/assets/img/desobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-orange-500">Débora Rodrigues</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
-                            <a href="https://github.com/VictoriaCM/" target="_blank">
+                            <a href="https://github.com/Deborah001-jpg/" target="_blank">
                                 <GithubLogo size={30} color="#030303" weight='fill' />
                             </a>
-                            <a href="https://www.linkedin.com/in/victória-moraes/" target="_blank">
+                            <a href="https://www.linkedin.com/in/deborah-rodrigues001/" target="_blank">
                                 <LinkedinLogo size={30} color="#030303" weight='fill' />
                             </a>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-200  border-2 border-gray-300 shadow-md text-white rounded-md  p-4">
-                        <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
+                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
+                        <img src="src/assets/img/gabsobre.jpeg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-orange-500">Gabriel Sponda</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
-                            <a href="https://github.com/VictoriaCM/" target="_blank">
+                            <a href="https://github.com/gabrielsponda/" target="_blank">
                                 <GithubLogo size={30} color="#030303" weight='fill' />
                             </a>
-                            <a href="https://www.linkedin.com/in/victória-moraes/" target="_blank">
+                            <a href="https://www.linkedin.com/in/gabrielsponda/" target="_blank">
                                 <LinkedinLogo size={30} color="#030303" weight='fill' />
                             </a>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-200  border-2 border-gray-300 shadow-md text-white rounded-md  p-4">
+                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
                         <img src="src/assets/img/guisobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-orange-500">Guilherme Góes</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
@@ -80,21 +80,21 @@ function Sobre() {
                             </a>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-200  border-2 border-gray-300 shadow-md text-white rounded-md  p-4">
+                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
                         <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-orange-500">Pedro Bernardo</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
-                            <a href="https://github.com/VictoriaCM/" target="_blank">
+                            <a href="https://github.com/Pedro-HSB/" target="_blank">
                                 <GithubLogo size={30} color="#030303" weight='fill' />
                             </a>
-                            <a href="https://www.linkedin.com/in/victória-moraes/" target="_blank">
+                            <a href="https://www.linkedin.com/in/pedro-hs-bernardo/" target="_blank">
                                 <LinkedinLogo size={30} color="#030303" weight='fill' />
                             </a>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-200  border-2 border-gray-300 shadow-md text-white rounded-md  p-4">
+                    <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl p-4">
                         <img src="src/assets/img/vicsobre.png" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-orange-500">Victória Moraes</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>

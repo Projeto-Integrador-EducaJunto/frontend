@@ -33,7 +33,7 @@ function Cadastro() {
   }, [usuarioResposta])
 
   function back() {
-    navigate('/login')
+    navigate('/home')
   }
 
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
@@ -135,6 +135,9 @@ function Cadastro() {
               />
             </div>
             <div className="flex justify-around w-3/4 gap-10 opacity-90">
+            <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 hover:bg-orange-600 w-1/2 py-2' onClick={back}>
+              Cancelar
+            </button>
               <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-blue-500 hover:bg-blue-600 w-1/2 py-2' type='submit'>
                 Cadastrar
               </button>
