@@ -72,7 +72,7 @@ function Cadastro() {
       <div className=" text-white h-screen place-items-center font-bold fundoCadastro">
 
         <div className=' flex justify-center container mx-auto px-10 h-screen w-full items-center '>
-          <form className='flex flex-col items-center h-2/3 w-1/3 gap-4 bg-opacity-70 bg-orange-300 p-4 rounded-2xl' onSubmit={cadastrarNovoUsuario}>
+          <form className='flex flex-col items-center h-2/3 w-1/3 gap-4 bg-opacity-60 bg-orange-300 p-4 rounded-2xl' onSubmit={cadastrarNovoUsuario}>
             <h2 className=' text-5xl'>Cadastro</h2>
             <div className="flex flex-col w-full">
               <label htmlFor="nome">Nome</label>
@@ -111,7 +111,7 @@ function Cadastro() {
               />
             </div>
             <div className="flex flex-col w-full">
-              <label htmlFor="senha">Senha (min. caracteres)</label>
+              <label htmlFor="senha">Senha (min. 8 caracteres)</label>
               <input
                 type="password"
                 id="senha"
@@ -141,7 +141,7 @@ function Cadastro() {
             </div>
             <p>
             Já possui uma conta?{' '}
-            <Link to="/login" className="text-orange-600 hover:underline">
+            <Link to="/login" className="text-blue-600 hover:underline">
               Entrar.
             </Link>
           </p>

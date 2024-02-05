@@ -36,10 +36,18 @@ function Login() {
 
   return (
     <>
-    
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="text-slate-900 text-5xl">Entrar</h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-blue-400 fundoCadastro">
+        <div className='text-white mx-60  backdrop-blur-sm'>
+          <h1 className="my-4  text-6xl font-bold leading-tight text-orange-500" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }} >
+           APRENDA, ENSINE, COMPARTILHE!
+          </h1>
+          <p className="leading-normal text-4xl mb-10  text-white backdrop-blur-md" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
+            Conecte-se e seja parte da democratização do saber.
+          </p>
+        </div>
+        <form className="flex justify-center items-center flex-col w-1/2 gap-4 bg-blue-500 bg-opacity-55 text-white  p-4 rounded-lg" onSubmit={login}>
+          <h2 className="text-white text-5xl">Entrar</h2>
           <div className="flex flex-col w-full round-full">
             <label htmlFor="usuario">Usuário</label>
             <input
@@ -47,7 +55,7 @@ function Login() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-none border-slate-700 rounded-2xl p-2"
+              className="border-none text-slate-700 border-slate-700 rounded-2xl p-2"
               value={usuarioLogin.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -66,8 +74,7 @@ function Login() {
           </div>
           <button
             type='submit'
-            className="rounded bg-blue-700 flex justify-center
-                                   hover:bg-orange-700 text-white w-1/2 py-2">
+            className="rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-orange-500 hover:bg-orange-600 w-1/2 py-2">
 
             {isLoading ? <RotatingLines
               strokeColor="white"
@@ -90,7 +97,7 @@ function Login() {
           </p>
 
         </form>
-        <div className="fundoLogin hidden lg:block"></div>
+
       </div>
     </>
   );
