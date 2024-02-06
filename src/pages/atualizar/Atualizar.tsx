@@ -80,12 +80,12 @@ function Atualizar() {
     // }
 
 
-    const  usuarioCad  = useContext(AuthContext)
+    const usuarioCad = useContext(AuthContext)
     const token = usuarioCad.usuario.token
 
     const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
-    const [usuario, setUsuario] = useState<Usuario>({
+    let [usuario, setUsuario] = useState<Usuario>({
         id: 0,
         nome: '',
         usuario: '',
@@ -94,7 +94,7 @@ function Atualizar() {
     })
 
     function back() {
-        navigate('/login')
+        navigate('/perfil')
     }
 
     function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
@@ -111,15 +111,14 @@ function Atualizar() {
     async function atualizarUsuario(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        usuario.id == usuarioCad.usuario.id
-
         if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
-
+            // setUsuario == usuarioCad.usuario.id 
             try {
-                await atualizar(`/usuarios/atualizar`, usuario, setUsuario,{
+                await atualizar(`/usuarios/atualizar`, usuario, setUsuario, {
                     headers: { 'Authorization': token }
                 })
                 alert('Usuario foi atualizado com sucesso!')
+                back()
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     alert('O Token Expirou!')
@@ -151,6 +150,17 @@ function Atualizar() {
                                 placeholder="Nome"
                                 className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded-md p-2"
                                 value={usuario.nome}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            />
+                        </div>
+                        <div className="flex flex-col w-full">
+                            <input
+                                type="text"
+                                id="id"
+                                name="id"
+                                placeholder="id"
+                                className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded-md p-2"
+                                value={usuario.id}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                             />
                         </div>
