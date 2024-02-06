@@ -59,17 +59,17 @@ const Perfil = () => {
 
             <div className='container mx-auto pt-60 p-5  bg-blue-100 rounded-lg '>
                 <section>
-                    <div className='grid grid-cols-4'>
+                    <div className='grid grid-cols-4 my-10'>
                         <div></div>
-                        <div className=' border text-center text-5xl  col-span-2 m-2 p-2 '>
+                        <div className='text-center text-5xl col-span-2 '>
                             <h2>Perfil do Usuario:</h2>
                         </div>
                     </div>
                 </section >
                 <section className='mt-10'>
-                    <div className="grid grid-cols-3">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:w-full">
                         <section>
-                            <div className='  '>
+                            <div className=''>
                                 <div className='bg-white border rounded-lg shadow-xl  justify-items-center m-2 p-2 overflow-hidden'>
                                     <div className='grid grid-cols-3'>
                                         <div></div>
@@ -86,7 +86,7 @@ const Perfil = () => {
                                 </div>
                             </div>
                         </section>
-                        <div className='text-left col-span-2 bg-white border rounded-lg shadow-xl m-2 p-2 text-xl'>
+                        <div className='text-left col-span-2 bg-white border rounded-lg shadow-xl m-2 p-2 text-xl md:w-1/2 lg:w-full'>
                             <div className='col-span-2  '>
                                 <div className=' grid grid-cols-2 border-b-2 border-slate-300 p-4   text-center'>
                                     <div className='bold text-black text-2xl '>
@@ -118,9 +118,9 @@ const Perfil = () => {
                 </section>
                 <section>
                     <section>
-                        <div className='grid grid-cols-4 my-10'>
+                        <div className='grid grid-cols-4 my-20'>
                             <div></div>
-                            <div className=' border text-center text-5xl  col-span-2 m-2 p-2 '>
+                            <div className='text-center text-5xl col-span-2 '>
                                 <h2>Postagens do Usuario:</h2>
                             </div>
                         </div>

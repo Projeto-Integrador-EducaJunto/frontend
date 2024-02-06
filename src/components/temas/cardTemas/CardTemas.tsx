@@ -1,16 +1,19 @@
+
 import Tema from "../../../models/Tema"
 import { ReactNode, useContext } from "react"
 import { AuthContext } from "../../../contexts/AuthContext"
 import { Link } from "react-router-dom"
 import "./CardTemas.css";
 
+
 interface CardTemasProps {
-  tema: Tema;
+  tema: Tema
 }
 
 
 
 function CardTemas({ tema }: CardTemasProps) {
+
 
   let btns: ReactNode
 
@@ -47,4 +50,4 @@ function CardTemas({ tema }: CardTemasProps) {
           );
 }
 
-          export default CardTemas;
+export default CardTemas
