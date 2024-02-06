@@ -159,7 +159,7 @@ function FormPostagem() {
     return (
         <div className="flex justify-center container mx-auto px-2 h-screen w-full items-center ">
         <div className="container flex flex-col items-center justify-center w-2/6  hover:full mx-auto p-16 py-12 gap-4
-         bg-blue-500 bg-opacity-75 text-black rounded-lg">
+         bg-blue-500 bg-opacity-78 text-black rounded-lg">
             <h1 className="text-4xl text-center my-8 text-white">
                 {id === undefined ? 'Cadastrar Postagem' : 'Editar Postagem'}
             </h1>
