@@ -33,7 +33,7 @@ function ListaTemas() {
 
     useEffect(() => {
         if (token === '') {
-            toastAlert("Você precisa estar logado!", "info")
+            toastAlert("Você precisa estar autenticado!", "info")
             navigate('/')
         }
     }, [token])
@@ -45,6 +45,7 @@ function ListaTemas() {
     return (
         <>
             {temas.length === 0 && (
+                <div className="flex justify-center items-center h-screen">
                 <DNA
                     visible={true}
                     height="200"
@@ -53,6 +54,7 @@ function ListaTemas() {
                     wrapperStyle={{}}
                     wrapperClass="dna-wrapper mx-auto"
                 />
+                </div>
             )}
             <div className="flex justify-center w-full py-32">
                 <div className="container flex flex-col">
