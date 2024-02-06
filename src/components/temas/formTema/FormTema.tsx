@@ -97,26 +97,28 @@ function FormTema() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto py-32">
-            <h1 className="text-4xl text-center my-8">
+        
+        <div style={{ backgroundImage: `url('https://pub-static.fotor.com/assets/bg/bf9a415f-b758-4c0d-a820-334370772ec3.jpg')` }}>
+        <div   className=" w-screen h-screen object-cover container flex flex-col items-center justify-center mx-auto py-32">
+            <h1 className="  flex items-center justify-center  font-bold text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
             </h1>
 
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="nome">Nome do Tema</label>
+            <form className="  w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
+                <div className=" flex flex-col gap-2">
+                    <label  className = " font-bold "htmlFor="nome">Nome do Tema</label>
                     <input
                         type="text"
                         placeholder="Descreva aqui seu tema"
                         name='nome'
-                        className="border-2 border-slate-700 rounded p-2"
+                        className=" border-2 border-slate-700 rounded p-2"
                         required
                         value={tema.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Descrição do Tema</label>
+                <div className="  flex flex-col gap-2">
+                    <label className = " font-bold " htmlFor="descricao">Descrição do Tema</label>
                     <input
                         type="text"
                         placeholder="Descreva aqui seu tema"
@@ -129,7 +131,7 @@ function FormTema() {
                 </div>
 
                 <button
-                    className="rounded text-slate-100 bg-indigo-400 
+                    className=" rounded text-slate-100 bg-indigo-400 
                                hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
                     type="submit">
 
@@ -148,7 +150,10 @@ function FormTema() {
                 </button>
             </form>
         </div>
+        </div>
+        
     );
+    
 }
 
 export default FormTema;
