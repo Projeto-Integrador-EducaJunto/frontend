@@ -15,6 +15,7 @@ import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPosta
 import Historias from "./pages/historias/Historias"
 import Perfil from "./pages/perfil/Perfil"
 import Atualizar from "./pages/atualizar/Atualizar"
+import SobreOds from "./pages/ods/sobreOds"
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -48,6 +49,7 @@ function App() {
               <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
 
               <Route path="/historias" element={<Historias />} />
+              <Route path="/ods" element={<SobreOds />} />
             </Routes>
           </div>
           <Footer />

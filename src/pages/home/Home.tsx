@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import './Home.css';
 import { EffectCards } from 'swiper/modules';
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -47,9 +48,11 @@ function Home() {
                         </div>
                         <div className="flex-none mt-auto bg-white rounded-b rounded-t-none shadow-lg p-6">
                             <div className="flex items-center justify-end">
-                                <button className="bg-orange-500 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
-                                    Ensinar
-                                </button>
+                                <Link to="/cadastro">
+                                    <button className="bg-orange-500 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
+                                        Ensinar
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -85,9 +88,11 @@ function Home() {
                         </div>
                         <div className="flex-none mt-auto bg-white rounded-b rounded-t-none shadow-lg p-6">
                             <div className="flex items-center justify-end">
-                                <button className="bg-orange-500 mx-auto lg:mx-0 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
-                                    Conhecer
-                                </button>
+                                <Link to="/ods">
+                                    <button className="bg-orange-500 mx-auto lg:mx-0 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
+                                        Conhecer
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -74,9 +74,8 @@ function Atualizar() {
     return (
         <>
             <div className=" text-white h-screen place-items-center font-bold fundoCadastro">
-
                 <div className=' flex justify-center container mx-auto px-10 h-screen w-full items-center '>
-                    <form className='flex flex-col items-center h-2/3 w-1/3 gap-4 bg-opacity-60 bg-orange-300 p-4 rounded-2xl' onSubmit={atualizarUsuario}>
+                    <form className='flex flex-col items-center h-2/3 w-1/3 gap-4 bg-opacity-60 bg-blue-300 p-4 rounded-2xl' onSubmit={atualizarUsuario}>
                         <h2 className=' text-5xl'>Atualizar</h2>
                         <div className="flex flex-col w-full">
                             <label htmlFor="nome">Nome</label>
