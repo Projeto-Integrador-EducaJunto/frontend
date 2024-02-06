@@ -79,7 +79,7 @@ const Perfil = () => {
                                         <div></div>
                                     </div>
                                     <div className='pt-4'>
-                                        <Link to={`/atualizarPerfil/${usuario.id}`} className=' bg-blue-200 text-black rounded-lg  flex items-center justify-center py-2'>
+                                        <Link to={`/atualizarPerfil/${usuario.id}`} className=' bg-blue-400  hover:bg-blue-600 text-black rounded-lg  flex items-center justify-center py-2'>
                                             <button>Editar</button>
                                         </Link>
                                     </div>
