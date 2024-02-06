@@ -77,14 +77,14 @@ function Atualizar() {
 
                 <div className=' flex justify-center container mx-auto px-10 h-screen w-full items-center '>
                     <form className='flex flex-col items-center h-2/3 w-1/3 gap-4 bg-opacity-60 bg-orange-300 p-4 rounded-2xl' onSubmit={atualizarUsuario}>
-                        <h2 className=' text-5xl'>Cadastro</h2>
+                        <h2 className=' text-5xl'>Atualizar</h2>
                         <div className="flex flex-col w-full">
                             <label htmlFor="nome">Nome</label>
                             <input
                                 type="text"
                                 id="nome"
                                 name="nome"
-                                placeholder="Nome"
+                                placeholder={usuarioCad.usuario.nome}
                                 className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded-md p-2"
                                 value={usuario.nome}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -96,7 +96,7 @@ function Atualizar() {
                                 type="text"
                                 id="usuario"
                                 name="usuario"
-                                placeholder="Usuario"
+                                placeholder={usuarioCad.usuario.usuario}
                                 className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded-md p-2"
                                 value={usuario.usuario}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -108,7 +108,7 @@ function Atualizar() {
                                 type="text"
                                 id="foto"
                                 name="foto"
-                                placeholder="Foto"
+                                placeholder={usuarioCad.usuario.foto}
                                 className="border-2  text-slate-500 border-orange-200  hover:bg-blue-100  hover:border-blue-300 rounded-md p-2"
                                 value={usuario.foto}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
