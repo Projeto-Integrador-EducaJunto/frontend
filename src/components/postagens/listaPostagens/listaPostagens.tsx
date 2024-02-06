@@ -4,7 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Postagem from "../../../models/Postagem";
 import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
-import { ToastAlerta } from "../../../utils/ToastAlerts";
+import { toastAlert } from "../../../utils/ToastAlerts";
 import CardPostagens from "../cardPostagens/CardPostagens";
 
 function ListaPostagens() {
@@ -26,7 +26,7 @@ function ListaPostagens() {
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                ToastAlerta('O token expirou, favor logar novamente', "erro")
+                toastAlert("O token expirou. Entre novamente", "erro")
                 handleLogout()
             }
         }
@@ -34,7 +34,7 @@ function ListaPostagens() {
 
     useEffect(() => {
         if (token === '') {
-            ToastAlerta('Você precisa estar logado', "")
+            toastAlert("Você precisa estar autenticado.", "")
             navigate('/');
         }
     }, [token])
