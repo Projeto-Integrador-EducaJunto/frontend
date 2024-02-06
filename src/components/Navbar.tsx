@@ -53,7 +53,7 @@ function Navbar() {
             <div className="container mx-auto flex justify-center items-center py-4">
                 <div className={`flex items-center text-white'}`}>
                     <Link to="/home" className="text-white">
-                        <img src="src\assets\img\logoNavbar.svg" className="h-10" />
+                        <img src="https://ik.imagekit.io/0h4imb0ky/img/logoNavbar.svg?updatedAt=1707248099251" className="h-10" />
                     </Link>
                     <ul className="flex items-center ml-20 font-bold">
                         <li className="mr-6">
