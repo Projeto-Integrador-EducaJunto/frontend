@@ -62,7 +62,7 @@ const Perfil = () => {
                     <div className='grid grid-cols-4 my-10'>
                         <div></div>
                         <div className='text-center text-5xl col-span-2 '>
-                            <h2>Perfil do Usuario:</h2>
+                            
                         </div>
                     </div>
                 </section >
