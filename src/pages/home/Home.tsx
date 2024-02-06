@@ -1,8 +1,26 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { ToastAlert } from "../../utils/ToastAlert";
+import { useEffect } from "react";
+
 
 function Home() {
+
+    const mensagem = "teste"
+
+    const erro = "erro"
+
+    useEffect(() => {
+        if (erro === 'erro') {
+            ToastAlert("Usuário foi autenticado com sucesso!", "sucesso")
+        }
+    },)
+
+    async function teste() {
+        ToastAlert("Usuário foi autenticado com sucesso!", "")
+    }
+
     const settings = {
         dots: true,
         infinite: true,
@@ -25,7 +43,7 @@ function Home() {
                             <p className="leading-normal text-2xl mb-8 text-white backdrop-blur-sm" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
                                 A educação é a chave que abre as portas da igualdade e da democracia, reduzindo as disparidades e construindo um futuro mais justo para todos.
                             </p>
-                            <button className="mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 hover:scale-110 duration-300 hover:bg-orange-500 hover:text-white">
+                            <button onClick={teste} className="mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 hover:scale-110 duration-300 hover:bg-orange-500 hover:text-white">
                                 Saiba mais
                             </button>
                         </div>

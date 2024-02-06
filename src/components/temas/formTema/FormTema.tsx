@@ -4,12 +4,17 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Tema";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
-import { ToastAlerta } from "../../../utils/ToastAlerts";
+import { ToastAlert } from '../../../utils/ToastAlert'
 
 
 function FormTema() {
 
     const navigate = useNavigate();
+
+    ToastAlert('teste', "info")
+    ToastAlert('teste', "sucesso")
+    ToastAlert('teste', "")
+    ToastAlert('Erro ao cadastrar o Usuário', "erro")
 
     const [tema, setTema] = useState<Tema>({} as Tema)
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -26,7 +31,7 @@ function FormTema() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                ToastAlerta('O token Expirou!',"")
+                ToastAlert('O token Expirou!', "info")
                 handleLogout()
             }
         }
@@ -34,7 +39,7 @@ function FormTema() {
 
     useEffect(() => {
         if (token === '') {
-            ToastAlerta('Você precisa estar logado!',"")
+            ToastAlert('Você precisa estar logado!', "")
             navigate('/login')
         }
     }, [token])
@@ -65,13 +70,13 @@ function FormTema() {
                 await atualizar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                ToastAlerta('O Tema foi atualizado com sucesso!',"sucesso")
+                ToastAlert('O Tema foi atualizado com sucesso!', "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    ToastAlerta('O Token Expirou!',"info")
+                    ToastAlert('O Token Expirou!', "info")
                     handleLogout();
                 } else {
-                    ToastAlerta('Erro ao atualizar o tema.',"erro")
+                    ToastAlert('Erro ao atualizar o tema.', "erro")
                 }
 
             }
@@ -80,13 +85,13 @@ function FormTema() {
                 await cadastrar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                ToastAlerta('O Tema foi cadastrado com sucesso!',"sucesso")
+                ToastAlert('O Tema foi cadastrado com sucesso!', "")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    ToastAlerta('O Token Expirou!',"")
+                    ToastAlert('O Token Expirou!', "")
                     handleLogout();
                 } else {
-                    ToastAlerta('Erro ao cadastrar o tema.',"erro")
+                    ToastAlert('Erro ao cadastrar o tema.', "erro")
                 }
 
             }
