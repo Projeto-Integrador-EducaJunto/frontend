@@ -157,7 +157,7 @@ function FormPostagem() {
     const carregandoTema = tema.descricao === ""
 
     return (
-        <div className="container flex flex-col items-center justify-center w-7/12 mx-auto p-16 h-76 gap-4
+        <div className="container flex flex-col items-center justify-center w-7/12 hover:full mx-auto p-16 h-76 gap-4
          bg-blue-500 bg-opacity-45 text-black rounded-lg">
             <h1 className="text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Postagem' : 'Editar Postagem'}
@@ -170,7 +170,7 @@ function FormPostagem() {
                     <label htmlFor="descricao">Conteúdo da Postagem</label>
                     <input
                         type="text"
-                        placeholder="Escreva o conteúdo da sua postagem"
+                        placeholder="Escreva o conteúdo "
                         name='conteudo'
                         className="border-2 border-slate-700 rounded p-2 drop-shadow-md"
                         value={postagem.conteudo}
@@ -178,11 +178,11 @@ function FormPostagem() {
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col  gap-2">
                     <label htmlFor="descricao">Anexo da Postagem</label>
                     <input
                         type="text"
-                        placeholder= "Insira o anexo da sua postagem"
+                        placeholder= "Insira o anexo "
                         name='anexo'
                         className="border-2 border-slate-700 rounded p-2 drop-shadow-md"
                         value={postagem.anexo}
