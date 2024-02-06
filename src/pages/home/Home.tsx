@@ -1,35 +1,10 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import { ToastAlert } from "../../utils/ToastAlert";
-import { useEffect } from "react";
+
 
 
 function Home() {
-
-    const mensagem = "teste"
-
-    const erro = "erro"
-
-    useEffect(() => {
-        if (erro === 'erro') {
-            ToastAlert("Usuário foi autenticado com sucesso!", "sucesso")
-        }
-    },)
-
-    async function teste() {
-        ToastAlert("Usuário foi autenticado com sucesso!", "")
-    }
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000
-    };
 
     return (
         <>
@@ -43,7 +18,7 @@ function Home() {
                             <p className="leading-normal text-2xl mb-8 text-white backdrop-blur-sm" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
                                 A educação é a chave que abre as portas da igualdade e da democracia, reduzindo as disparidades e construindo um futuro mais justo para todos.
                             </p>
-                            <button onClick={teste} className="mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 hover:scale-110 duration-300 hover:bg-orange-500 hover:text-white">
+                            <button className="mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 hover:scale-110 duration-300 hover:bg-orange-500 hover:text-white">
                                 Saiba mais
                             </button>
                         </div>
@@ -185,7 +160,7 @@ function Home() {
                             <div className="bg-white border rounded-lg shadow-lg p-4">
                                 <h2 className="text-2xl font-bold text-gray-800 mb-2">Lucas Oliveira</h2>
                                 <p className="text-gray-600">
-                                    Lucas é um exemplo de dedicação e superação, e ele nogit s conta como nossos recursos o ajudaram a aprender e crescer.
+                                    Lucas é um exemplo de dedicação e superação, e ele nos conta como nossos recursos o ajudaram a aprender e crescer.
                                 </p>
                             </div>
                         </div>

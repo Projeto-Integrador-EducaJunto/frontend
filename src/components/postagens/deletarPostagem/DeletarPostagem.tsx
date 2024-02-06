@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
-import { AuthContext } from '../../../contexts/AuthContext';
-import Postagem from '../../../models/Postagem';
-import { buscar, deletar } from '../../../services/Service';
-import { ToastAlert } from '../../../utils/ToastAlert';
-
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router'
+import { AuthContext } from '../../../contexts/AuthContext'
+import Postagem from '../../../models/Postagem'
+import { buscar, deletar } from '../../../services/Service'
+import { toastAlert } from '../../../utils/ToastAlerts'
 
 function DeletarPostagem() {
     const [Postagem, setPostagem] = useState<Postagem>({} as Postagem)
@@ -16,24 +15,24 @@ function DeletarPostagem() {
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
 
-  async function buscarPorId(id: string) {
-    try {
-      await buscar(`/postagems/${id}`, setPostagem, {
-        headers: {
-          Authorization: token,
-        },
-      });
-    } catch (error: any) {
-      if (error.toString().includes('403')) {
-        ToastAlert('O token expirou, favor logar novamente', 'info');
-        handleLogout();
-      }
+    async function buscarPorId(id: string) {
+        try {
+            await buscar(`/postagens/${id}`, setPostagem, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+        } catch (error: any) {
+            if (error.toString().includes('403')) {
+                toastAlert("O token expirou. Entre novamente.", "info")
+                handleLogout()
+            }
+        }
     }
-  }
 
     useEffect(() => {
         if (token === '') {
-            ToastAlert('Você precisa estar logado', "info")
+            toastAlert("Você precisa estar autenticado.", "info")
             navigate('/login')
         }
     }, [token])
@@ -44,22 +43,23 @@ function DeletarPostagem() {
         }
     }, [id])
 
-  function retornar() {
-    navigate('/postagems');
-  }
-
-  async function deletarPostagem() {
-    try {
-      await deletar(`/postagems/${id}`, {
-        headers: {
-          Authorization: token,
-        },
-      });
-
-      ToastAlert('Postagem apagada com sucesso', 'sucesso');
-    } catch (error) {
-      ToastAlert('Erro ao apagar a Postagem', 'erro');
+    function retornar() {
+        navigate("/postagens")
     }
+
+    async function deletarPostagem() {
+        try {
+            await deletar(`/postagens/${id}`, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+
+            toastAlert("Postagem apagada com sucesso.", "sucesso")
+
+        } catch (error) {
+            toastAlert("Erro ao apagar a postagem.", "erro")
+        }
 
         retornar()
     }

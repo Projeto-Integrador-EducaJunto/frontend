@@ -5,7 +5,8 @@ import Postagem from "../../../models/Postagem";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 import Tema from "../../../models/Tema";
-import { ToastAlert } from "../../../utils/ToastAlert";
+import { toastAlert } from "../../../utils/ToastAlerts";
+
 
 
 function FormPostagem() {
@@ -15,8 +16,8 @@ function FormPostagem() {
     const [temas, setTemas] = useState<Tema[]>([])
 
     const [tema, setTema] = useState<Tema>({
-        id:0,
-        descricao:"",
+        id: 0,
+        descricao: "",
         nome: "",
     })
 
@@ -25,7 +26,7 @@ function FormPostagem() {
         conteudo: "",
         anexo: "",
         data_hora: "",
-        estado: 0,	
+        estado: 0,
         tema: null,
         usuario: null,
     })
@@ -37,8 +38,11 @@ function FormPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                ToastAlert('O Token Expirou!', "info")
+                toastAlert('O Token Expirou!', "erro")
                 handleLogout()
+            }
+            else {
+                toastAlert("Ocorreu algum erro!", "erro")
             }
         }
     }
@@ -51,8 +55,11 @@ function FormPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                ToastAlert('O Token Expirou!', "info")
+                toastAlert('O Token Expirou!', "erro")
                 handleLogout()
+            }
+            else {
+                toastAlert("Ocorreu algum erro!", "erro")
             }
         }
     }
@@ -65,8 +72,11 @@ function FormPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                ToastAlert('O Token Expirou!', "info")
+                toastAlert('O Token Expirou!', "erro")
                 handleLogout()
+            }
+            else {
+                toastAlert("Ocorreu algum erro!", "erro")
             }
         }
     }
@@ -80,7 +90,7 @@ function FormPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            ToastAlert('Você precisa estar logado!', "info")
+            toastAlert("Você precisa estar autenticado!", "info")
             navigate('/login')
         }
     }, [token])
@@ -97,16 +107,16 @@ function FormPostagem() {
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema:tema,
+            tema: tema,
         })
-    },[tema])
+    }, [tema])
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema:tema,
-            usuario:usuario,
+            tema: tema,
+            usuario: usuario,
         })
     }
 
@@ -123,13 +133,13 @@ function FormPostagem() {
                 await atualizar(`/postagens`, postagem, setPostagem, {
                     headers: { 'Authorization': token }
                 })
-                ToastAlert('Postagem foi atualizado com sucesso!', "sucesso")
+                toastAlert("Postagem atualizada com sucesso!", "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    ToastAlert('O Token Expirou!', "info")
+                    toastAlert("O token expirou!", "erro")
                     handleLogout();
                 } else {
-                    ToastAlert('Erro ao atualizar o Postagem.', "erro") 
+                    toastAlert("Erro ao atualizar a postagem.", "erro")
                 }
 
             }
@@ -138,13 +148,13 @@ function FormPostagem() {
                 await cadastrar(`/postagens`, postagem, setPostagem, {
                     headers: { 'Authorization': token }
                 })
-                ToastAlert('Postagem foi cadastrado com sucesso!', "sucesso")
+                toastAlert("Postagem foi cadastrada com sucesso!", "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    ToastAlert('O Token Expirou!', "info")
+                    toastAlert("O token expirou!", "erro")
                     handleLogout();
                 } else {
-                    ToastAlert('Erro ao cadastrar o Postagem.', "erro")
+                    toastAlert("Erro ao cadastrar a postagem.", "erro")
                 }
 
             }
@@ -152,78 +162,78 @@ function FormPostagem() {
 
         setIsLoading(false)
         retornar()
-    } 
+    }
 
     const carregandoTema = tema.descricao === ""
 
     return (
         <div className="flex justify-center container mx-auto px-2 h-screen w-full items-center ">
-        <div className="container flex flex-col items-center justify-center w-2/6  hover:full mx-auto p-16 py-12 gap-4
+            <div className="container flex flex-col items-center justify-center w-2/6  hover:full mx-auto p-16 py-12 gap-4
          bg-blue-500 bg-opacity-78 text-black rounded-lg">
-            <h1 className="text-4xl text-center my-8 text-white">
-                {id === undefined ? 'Cadastrar Postagem' : 'Editar Postagem'}
-            </h1>
+                <h1 className="text-4xl text-center my-8 text-white">
+                    {id === undefined ? 'Cadastrar Postagem' : 'Editar Postagem'}
+                </h1>
 
-            <form className="" onSubmit={gerarNovaPostagem}>
+                <form className="" onSubmit={gerarNovaPostagem}>
 
-                
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Conteúdo da Postagem</label>
-                    <input
-                        type="text"
-                        placeholder="Escreva o conteúdo "
-                        name='conteudo'
-                        className="border-2 border-slate-700 rounded p-2 drop-shadow-md flex justify-center "
-                        value={postagem.conteudo}
-                        required
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col  gap-2">
-                    <label htmlFor="descricao">Anexo da Postagem</label>
-                    <input
-                        type="text"
-                        placeholder= "Insira o anexo "
-                        name='anexo'
-                        className="border-2 border-slate-700 rounded p-2 drop-shadow-md"
-                        value={postagem.anexo}
-                        required
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
 
-                <div className="flex flex-col gap-2">
-                    <p>Tema da postagem</p>
-                    <select name="tema" id="tema" className='border-2 p-2 border-slate-800 rounded drop-shadow-md' onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
-                        <option value="" selected disabled>Selecione um tema</option>
-                        {temas.map((tema) => (
-                            <>
-                                <option value={tema.id} >{tema.nome}</option>
-                            </>
-                        ))}
-                    </select>
-                </div>
-                <button
-                disabled={carregandoTema}
-                    className="rounded-lg text-white text-lg bg-orange-400 w-1/2 h-1/2 mt-5 
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="descricao">Conteúdo da Postagem</label>
+                        <input
+                            type="text"
+                            placeholder="Escreva o conteúdo "
+                            name='conteudo'
+                            className="border-2 border-slate-700 rounded p-2 drop-shadow-md flex justify-center "
+                            value={postagem.conteudo}
+                            required
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+                    <div className="flex flex-col  gap-2">
+                        <label htmlFor="descricao">Anexo da Postagem</label>
+                        <input
+                            type="text"
+                            placeholder="Insira o anexo "
+                            name='anexo'
+                            className="border-2 border-slate-700 rounded p-2 drop-shadow-md"
+                            value={postagem.anexo}
+                            required
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        <p>Tema da postagem</p>
+                        <select name="tema" id="tema" className='border-2 p-2 border-slate-800 rounded drop-shadow-md' onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
+                            <option value="" selected disabled>Selecione um tema</option>
+                            {temas.map((tema) => (
+                                <>
+                                    <option value={tema.id} >{tema.nome}</option>
+                                </>
+                            ))}
+                        </select>
+                    </div>
+                    <button
+                        disabled={carregandoTema}
+                        className="rounded-lg text-white text-lg bg-orange-400 w-1/2 h-1/2 mt-5 
                                hover:bg-blue-500 py-3 mx-auto flex justify-center drop-shadow-md "
-                    type="submit">
+                        type="submit">
 
-                    {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>{carregandoTema ? <span>Atualizar</span> : id !== undefined ? 'Editar' : 'Cadastrar'}</span>
+                        {isLoading ?
+                            <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                            <span>{carregandoTema ? <span>Criar</span> : id !== undefined ? 'Editar' : 'Cadastrar'}</span>
 
-                    }
+                        }
 
-                </button>
-            </form>
-        </div>
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }

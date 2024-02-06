@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext';
-import { ToastAlert } from '../../utils/ToastAlert'
+import { toastAlert } from '../../utils/ToastAlerts'
 import CardPostUsuario from '../../components/postagens/ListaPostagensUser/ListaPostagensUser';
 import Postagem from '../../models/Postagem';
 import { buscar } from "../../services/Service";
@@ -12,24 +12,13 @@ const Perfil = () => {
 
     let navigate = useNavigate();
 
-    const mensagem = "teste"
-
-    const erro = "erro"
-
-    ToastAlert("Usuário foi autenticado com sucesso!", "sucesso")
-    // ToastAlert('teste', "erro")
-    // ToastAlert('teste', "")
-    // ToastAlert(mensagem,'sucesso')
-    // ToastAlert(mensagem,erro)
-    //alert('Erro adastrar o Usuário')
-
     const { usuario } = useContext(AuthContext)
 
     let numPost = 0
 
     useEffect(() => {
         if (usuario.token === '') {
-            ToastAlert('Você precisa estar logado!', "info")
+            toastAlert('Você precisa estar logado!', "info")
             navigate('/login')
         }
     }, [usuario.token])
@@ -47,7 +36,7 @@ const Perfil = () => {
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                ToastAlert('O token expirou, favor logar novamente', "erro")
+                toastAlert('O token expirou, favor logar novamente', "erro")
             }
         }
     }
