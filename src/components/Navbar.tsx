@@ -9,7 +9,7 @@ function Navbar() {
     const location = useLocation();
     const { usuario, handleLogout } = useContext(AuthContext);
     const [isScrolled, setIsScrolled] = useState(false);
-    const isHomeRoute = location.pathname === '/home';
+    const isHomeRoute = location.pathname === '/home' || location.pathname === '/';
     const navClass = isScrolled || !isHomeRoute ? 'bg-blue-500' : 'bg-transparent';
     const dropdownRef = useRef(null);
     const [showDropdown, setShowDropdown] = useState(false);
