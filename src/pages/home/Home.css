@@ -1,0 +1,16 @@
+.swiper {
+  width: 640px;
+  height: 480px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 50px;
+  background-color: #fff;
+  border: 2px solid dodgerblue;
+}
