@@ -28,7 +28,6 @@ function CardPostagem({ postagem }: CardPostagemProps) {
   }
   else {
     userTrue = ""
-
   }
 
   return (
