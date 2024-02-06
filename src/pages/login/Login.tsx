@@ -59,7 +59,7 @@ function Login() {
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-blue-400 fundoCadastro">
         <div className='text-white mx-80  backdrop-blur-sm'>
           <h1 className="my-4  text-6xl font-bold leading-tight text-orange-500" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }} >
-          APRENDA, ENSINE, COMPARTILHE!
+            APRENDA, ENSINE, COMPARTILHE!
           </h1>
           <p className="leading-normal text-4xl mb-10  text-white backdrop-blur-md" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
             Conecte-se e seja parte da democratização do saber.
@@ -93,26 +93,26 @@ function Login() {
           </div>
 
           <div className="flex justify-around w-2/4 gap-5 opacity-90">
-          <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 hover:bg-orange-600 w-1/2 py-2' onClick={back}>
+            <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 hover:bg-orange-600 w-1/2 py-2' onClick={back}>
               Cancelar
             </button>
-          <button
-            type='submit'
-            className="flex justify-center rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-blue-500 hover:bg-blue-600 w-1/2 py-2">
-            {isLoading ? <RotatingLines
-              strokeColor="white"
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="24"
-              visible={true}
-            /> :
-              <span>Iniciar sessão</span>
-            }
-          </button>
-        </div>
+            <button
+              type='submit'
+              className="flex justify-center rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-blue-500 hover:bg-blue-600 w-1/2 py-2">
+              {isLoading ? <RotatingLines
+                strokeColor="white"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="24"
+                visible={true}
+              /> :
+                <span>Iniciar sessão</span>
+              }
+            </button>
+          </div>
           <hr className="border-blue-400 w-full" />
 
-          <p  className=' backdrop-blur-sm'>
+          <p className=' backdrop-blur-sm'>
             Ainda não tem uma conta?{' '}
             <Link to="/cadastro" className="text-orange-600 hover:underline  ">
               Cadastre-se

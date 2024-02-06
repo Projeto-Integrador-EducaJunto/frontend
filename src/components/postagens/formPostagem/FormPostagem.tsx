@@ -227,7 +227,7 @@ function FormPostagem() {
                                 width="24"
                                 visible={true}
                             /> :
-                            <span>{carregandoTema ? <span>Criar</span> : id !== undefined ? 'Editar' : 'Cadastrar'}</span>
+                            <span>{id !== undefined ? 'Editar' : 'Cadastrar'}</span>
 
                         }
 

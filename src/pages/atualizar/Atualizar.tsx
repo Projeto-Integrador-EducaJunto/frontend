@@ -2,88 +2,24 @@ import { useState, useContext, useEffect, ChangeEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import Usuario from "../../models/Usuario";
-import { atualizar } from "../../services/Service";
+import { atualizar, buscar } from "../../services/Service";
+import { toastAlert } from "../../utils/ToastAlerts";
 
 function Atualizar() {
 
     let navigate = useNavigate()
 
-    // const [confirmaSenha, setConfirmaSenha] = useState<string>("")
-
-    // const { usuario, handleLogout } = useContext(AuthContext)
-    // const token = usuario.token
-
-    // let [usuarioUse, setUsuarioUse] = useState<Usuario>({
-    //     id: 0,
-    //     nome: '',
-    //     usuario: '',
-    //     senha: '',
-    //     foto: ''
-    // })
-
-    // const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
-    //     id: 0,
-    //     nome: '',
-    //     usuario: '',
-    //     senha: '',
-    //     foto: ''
-    // })
-
-    // useEffect(() => {
-    //     if (usuarioResposta.id !== 0) {
-    //         back()
-    //     }
-    // }, [usuarioResposta])
-
-    // function back() {
-    //     navigate('/login')
-    // }
-
-    // function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
-    //     setConfirmaSenha(e.target.value)
-    // }
-
-    // function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-    //     setUsuarioUse({
-    //         ...usuarioUse,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
-    // async function atualizarUsuario(e: ChangeEvent<HTMLFormElement>) {
-    //     e.preventDefault()
-
-    //     usuarioUse.id == usuario.id
-    //     if (usuarioUse.nome === "" || usuarioUse.foto === "" || usuarioUse.usuario) {
-    //         usuarioUse.nome == usuario.nome
-    //         usuarioUse.foto == usuario.foto
-    //         usuarioUse.usuario == usuario.usuario
-    //     }
-
-    //     if (confirmaSenha === usuarioUse.senha && usuarioUse.senha.length >= 8) {
-
-    //         try {
-    //             await atualizar(`/usuarios/atualizar`, usuarioUse, setUsuarioResposta,{
-    //                              headers: { 'Authorization': token }
-    //                          })
-    //             alert('Usuário cadastrado com sucesso')
-
-    //         } catch (error) {
-    //             alert('Erro ao cadastrar o Usuário')
-    //         }
-
-    //     } else {
-    //         alert('Dados inconsistentes. Verifique as informações de cadastro.')
-    //         setUsuarioUse({ ...usuario, senha: "" }) // Reinicia o campo de Senha
-    //         setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
-    //     }
-    // }
-
-
     const usuarioCad = useContext(AuthContext)
     const token = usuarioCad.usuario.token
+    const id = usuarioCad.usuario.id
 
     const [confirmaSenha, setConfirmaSenha] = useState<string>("")
+
+    useEffect(() => {
+        if (id !== undefined) {
+            setUsuario({ ...usuario, id: usuarioCad.usuario.id })
+        }
+    },)
 
     let [usuario, setUsuario] = useState<Usuario>({
         id: 0,
@@ -93,8 +29,9 @@ function Atualizar() {
         foto: ''
     })
 
+
     function back() {
-        navigate('/perfil')
+        navigate('/home')
     }
 
     function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
@@ -111,21 +48,21 @@ function Atualizar() {
     async function atualizarUsuario(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
+
         if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
-            // setUsuario == usuarioCad.usuario.id 
             try {
                 await atualizar(`/usuarios/atualizar`, usuario, setUsuario, {
                     headers: { 'Authorization': token }
                 })
-                alert('Usuario foi atualizado com sucesso!')
+                toastAlert("Usuário cadastrado com sucesso!", "sucesso")
+                toastAlert("Você foi desconectado.Por favor, faça login novamente!", "info")
                 back()
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('O Token Expirou!')
+                    toastAlert("O token expirou!", "info")
                 } else {
-                    alert('Erro ao atualizar o Usuario.')
+                    toastAlert('Erro ao atualizar o Usuario.', "erro")
                 }
-
             }
         } else {
             alert('Dados inconsistentes. Verifique as informações de cadastro.')
@@ -150,17 +87,6 @@ function Atualizar() {
                                 placeholder="Nome"
                                 className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded-md p-2"
                                 value={usuario.nome}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                            />
-                        </div>
-                        <div className="flex flex-col w-full">
-                            <input
-                                type="text"
-                                id="id"
-                                name="id"
-                                placeholder="id"
-                                className="border-2  text-slate-500 border-orange-200 hover:bg-blue-100  hover:border-blue-300 rounded-md p-2"
-                                value={usuario.id}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                             />
                         </div>
@@ -214,15 +140,9 @@ function Atualizar() {
                         </div>
                         <div className="flex justify-around w-3/4 gap-10 opacity-90">
                             <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-blue-500 hover:bg-blue-600 w-1/2 py-2' type='submit'>
-                                Cadastrar
+                                Atualizar
                             </button>
                         </div>
-                        <p>
-                            Já possui uma conta?{' '}
-                            <Link to="/login" className="text-blue-600 hover:underline">
-                                Entrar.
-                            </Link>
-                        </p>
                     </form>
                 </div>
             </div>
