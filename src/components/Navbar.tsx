@@ -3,13 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { useContext } from 'react';
 import { UserCircle } from '@phosphor-icons/react';
+import { toastAlert } from '../utils/ToastAlerts';
 
 function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
     const { usuario, handleLogout } = useContext(AuthContext);
     const [isScrolled, setIsScrolled] = useState(false);
-    const isHomeRoute = location.pathname === '/home';
+    const isHomeRoute = location.pathname === '/home' || location.pathname === '/';
     const navClass = isScrolled || !isHomeRoute ? 'bg-blue-500' : 'bg-transparent';
     const dropdownRef = useRef(null);
     const [showDropdown, setShowDropdown] = useState(false);
@@ -19,7 +20,7 @@ function Navbar() {
 
     function logout() {
         handleLogout();
-        alert("O usuário foi desconectado com sucesso!");
+        toastAlert("O usuário foi desconectado com sucesso!", "sucesso");
         navigate("/login");
     }
 

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import './Cadastro.css'
+import { toastAlert } from '../../utils/ToastAlerts'
 
 function Cadastro() {
 
@@ -33,7 +34,7 @@ function Cadastro() {
   }, [usuarioResposta])
 
   function back() {
-    navigate('/login')
+    navigate('/home')
   }
 
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
@@ -54,14 +55,14 @@ function Cadastro() {
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-        alert('Usuário cadastrado com sucesso')
+        toastAlert("Usuário cadastrado com sucesso!", "sucesso")
 
       } catch (error) {
-        alert('Erro ao cadastrar o Usuário')
+        toastAlert("Erro ao cadastrar o usuário!", "erro")
       }
 
     } else {
-      alert('Dados inconsistentes. Verifique as informações de cadastro.')
+      toastAlert("Dados inconsistentes. Verifique as informações de cadastro.", "erro")
       setUsuario({ ...usuario, senha: "" }) 
       setConfirmaSenha("")                  
     }
@@ -135,6 +136,9 @@ function Cadastro() {
               />
             </div>
             <div className="flex justify-around w-3/4 gap-10 opacity-90">
+            <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-orange-400 text-white bg-orange-500 hover:bg-orange-600 w-1/2 py-2' onClick={back}>
+              Cancelar
+            </button>
               <button className='rounded-full  shadow-md hover:scale-[1.1] shadow-blue-400 text-white bg-blue-500 hover:bg-blue-600 w-1/2 py-2' type='submit'>
                 Cadastrar
               </button>
