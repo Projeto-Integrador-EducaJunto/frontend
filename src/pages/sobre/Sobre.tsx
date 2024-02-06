@@ -25,8 +25,8 @@ function Sobre() {
                 </h2>
                 <div className="flex flex-wrap justify-center items-center mx-2 my-10 gap-10">
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
-                        <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
-                        <p className="font-bold text-orange-500">Bruno Cesar</p>
+                        <img src="src/assets/img/brusobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <p className="font-bold text-xl text-orange-500">Bruno Cesar</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
@@ -40,7 +40,7 @@ function Sobre() {
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
                         <img src="src/assets/img/desobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
-                        <p className="font-bold text-orange-500">Débora Rodrigues</p>
+                        <p className="font-bold text-xl text-orange-500">Débora Rodrigues</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
@@ -54,7 +54,7 @@ function Sobre() {
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
                         <img src="src/assets/img/gabsobre.jpeg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
-                        <p className="font-bold text-orange-500">Gabriel Sponda</p>
+                        <p className="font-bold text-xl text-orange-500">Gabriel Sponda</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
@@ -68,7 +68,7 @@ function Sobre() {
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
                         <img src="src/assets/img/guisobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
-                        <p className="font-bold text-orange-500">Guilherme Góes</p>
+                        <p className="font-bold text-xl text-orange-500">Guilherme Góes</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
@@ -82,7 +82,7 @@ function Sobre() {
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
                         <img src="src/assets/img/pesobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
-                        <p className="font-bold text-orange-500">Pedro Bernardo</p>
+                        <p className="font-bold text-xl text-orange-500">Pedro Bernardo</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
@@ -96,7 +96,7 @@ function Sobre() {
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl p-4">
                         <img src="src/assets/img/vicsobre.png" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
-                        <p className="font-bold text-orange-500">Victória Moraes</p>
+                        <p className="font-bold text-xl text-orange-500">Victória Moraes</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
                         <div className='flex gap-2' >
