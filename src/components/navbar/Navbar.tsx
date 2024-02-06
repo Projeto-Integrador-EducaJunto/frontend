@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
-import { useContext } from 'react';
 import { UserCircle } from '@phosphor-icons/react';
 import { toastAlert } from '../../utils/ToastAlerts';
 
@@ -12,9 +11,7 @@ function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const isHomeRoute = location.pathname === '/home' || location.pathname === '/';
     const navClass = isScrolled || !isHomeRoute ? 'bg-blue-500' : 'bg-transparent';
-    const dropdownRef = useRef(null);
     const [showDropdown, setShowDropdown] = useState(false);
-    const toggleDropdown = () => setShowDropdown(!showDropdown);
 
     const shouldHideNavbar = location.pathname === '/login' || location.pathname === '/cadastro';
 
@@ -33,21 +30,8 @@ function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    useEffect(() => {
-        const handleClickOutside = (event: { target: any; }) => {
-            if (dropdownRef.current && !(dropdownRef.current as HTMLElement).contains(event.target)) {
-                setShowDropdown(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
-
     if (shouldHideNavbar) return null;
+
     return (
         <nav className={`fixed w-full text-white z-40 ${isScrolled ? 'duration-500 border-b' : ''} ${navClass}`}>
             <div className="container mx-auto flex justify-center items-center py-4">
@@ -56,48 +40,46 @@ function Navbar() {
                         <img src="https://ik.imagekit.io/0h4imb0ky/img/logoNavbar.svg?updatedAt=1707248099251" className="h-10" />
                     </Link>
                     <ul className="flex items-center ml-20 font-bold">
-    <li className="mr-6 group">
-        <Link to="/home" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
-            Home
-        </Link>
-    </li>
-    <li className="mr-6 group">
-        <Link to="/sobre" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
-            Sobre nós
-        </Link>
-    </li>
-    <li className="mr-6 group">
-        <Link to="/temas" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
-            Temas
-        </Link>
-    </li>
-    <li className="mr-6 group">
-        <Link to="/postagens" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
-            Postagens
-        </Link>
-    </li>
-</ul>
+                        <li className="mr-6 group">
+                            <Link to="/home" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="mr-6 group">
+                            <Link to="/sobre" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+                                Sobre nós
+                            </Link>
+                        </li>
+                        <li className="mr-6 group">
+                            <Link to="/temas" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+                                Temas
+                            </Link>
+                        </li>
+                        <li className="mr-6 group">
+                            <Link to="/postagens" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+                                Postagens
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
-                <div className="absolute right-16 top-1/2-translate-y-1/2">
-                    <button onClick={toggleDropdown} className="p-2">
+                <div className="absolute right-10">
+                    <button onMouseEnter={() => setShowDropdown(true)} className="p-2">
                         {usuario.token ? (
                             <img src={usuario.foto} alt="Foto do perfil" className="rounded-full w-8 h-8" />
                         ) : (
-                            <UserCircle size={32} className="rounded-full w-32" />
+                            <UserCircle size={32} className="text-white" />
                         )}
                     </button>
                     {showDropdown && (
-                        <div className="absolute right-1 rounded-md shadow-lg bg-white" ref={dropdownRef}>
-                            <div className="py-1 w-32">
+                        <div className="absolute right-0 mt-2 rounded-md shadow-lg bg-white text-black"
+                             onMouseLeave={() => setShowDropdown(false)}>
+                            <div className="py-1 w-48">
+                                {/* Aqui mantemos o menu dropdown */}
                                 {usuario.token ? (
                                     <>
                                         <Link to="/perfil" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</Link>
-                                        <Link to="/configuracoes" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Configurações</Link>
-                                        {usuario.usuario === 'root@root.com' && (
-                                            <Link to="/cadastrarTema" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Criar tema</Link>
-                                        )}
-                                        <Link to="/cadastrarPostagem" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Criar postagem</Link>
-                                        <div className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={logout}>Sair</div>
+                                        {/* Continuação dos links do dropdown */}
+                                        <button className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" onClick={logout}>Sair</button>
                                     </>
                                 ) : (
                                     <>
