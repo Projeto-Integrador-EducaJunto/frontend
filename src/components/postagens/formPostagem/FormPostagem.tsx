@@ -157,22 +157,23 @@ function FormPostagem() {
     const carregandoTema = tema.descricao === ""
 
     return (
-        <div className="container flex flex-col items-center justify-center w-7/12 hover:full mx-auto p-16 h-76 gap-4
-         bg-blue-500 bg-opacity-45 text-black rounded-lg">
-            <h1 className="text-4xl text-center my-8">
+        <div className="flex justify-center container mx-auto px-2 h-screen w-full items-center ">
+        <div className="container flex flex-col items-center justify-center w-2/6  hover:full mx-auto p-16 py-12 gap-4
+         bg-blue-500 bg-opacity-75 text-black rounded-lg">
+            <h1 className="text-4xl text-center my-8 text-white">
                 {id === undefined ? 'Cadastrar Postagem' : 'Editar Postagem'}
             </h1>
 
             <form className="" onSubmit={gerarNovaPostagem}>
 
                 
-                <div className="flex flex-col gap-2 ">
+                <div className="flex flex-col gap-2">
                     <label htmlFor="descricao">Conteúdo da Postagem</label>
                     <input
                         type="text"
                         placeholder="Escreva o conteúdo "
                         name='conteudo'
-                        className="border-2 border-slate-700 rounded p-2 drop-shadow-md"
+                        className="border-2 border-slate-700 rounded p-2 drop-shadow-md flex justify-center "
                         value={postagem.conteudo}
                         required
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -204,8 +205,8 @@ function FormPostagem() {
                 </div>
                 <button
                 disabled={carregandoTema}
-                    className="rounded text-white text-lg  h-12 bg-orange-300 w-full mt-5 
-                               hover:bg-blue-500 py-3 mx-auto flex justify-center drop-shadow-md"
+                    className="rounded-lg text-white text-lg bg-orange-400 w-1/2 h-1/2 mt-5 
+                               hover:bg-blue-500 py-3 mx-auto flex justify-center drop-shadow-md "
                     type="submit">
 
                     {isLoading ?
@@ -216,12 +217,13 @@ function FormPostagem() {
                             width="24"
                             visible={true}
                         /> :
-                        <span>{carregandoTema ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}</span>
+                        <span>{carregandoTema ? <span>Atualizar</span> : id !== undefined ? 'Editar' : 'Cadastrar'}</span>
 
                     }
 
                 </button>
             </form>
+        </div>
         </div>
     );
 }
