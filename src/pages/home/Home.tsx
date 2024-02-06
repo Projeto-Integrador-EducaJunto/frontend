@@ -1,8 +1,10 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
-
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import './Home.css';
+import { EffectCards } from 'swiper/modules';
 
 function Home() {
 
@@ -131,47 +133,43 @@ function Home() {
                 </div>
             </section>
 
-            <section className="bg-white py-8">
+            <section className="py-8 bg-white">
                 <div className="container mx-auto px-4">
-                    <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-orange-500" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
+                    <h1 className="text-5xl font-bold leading-tight text-center text-orange-500 mb-12" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
                         Histórias de Sucesso
                     </h1>
-                    <div className="w-full mb-4">
-                        <div className="h-1 mx-auto w-64 rounded-t"></div>
-                    </div>
-                    <div className="flex flex-wrap justify-center mt-6">
-                        <div className="w-1/3 p-6">
-                            <div className="bg-white border rounded-lg shadow-lg p-4">
+
+                    <Swiper
+                        effect={'cards'}
+                        grabCursor={true}
+                        modules={[EffectCards]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <div className="flex flex-col">
                                 <h2 className="text-2xl font-bold text-gray-800 mb-2">João Silva</h2>
                                 <p className="text-gray-600">
                                     João começou sua jornada de aprendizado conosco e agora é um profissional de sucesso na área de tecnologia.
                                 </p>
                             </div>
-                        </div>
-                        <div className="w-full md:w-1/2 lg:w-1/3 p-6">
-                            <div className="bg-white border rounded-lg shadow-lg p-4">
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex flex-col">
                                 <h2 className="text-2xl font-bold text-gray-800 mb-2">Maria Santos</h2>
                                 <p className="text-gray-600">
                                     Maria compartilhou sua experiência conosco e como nossa plataforma a ajudou a conquistar seus objetivos acadêmicos.
                                 </p>
                             </div>
-                        </div>
-                        <div className="w-full md:w-1/2 lg:w-1/3 p-6">
-                            <div className="bg-white border rounded-lg shadow-lg p-4">
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex flex-col">
                                 <h2 className="text-2xl font-bold text-gray-800 mb-2">Lucas Oliveira</h2>
                                 <p className="text-gray-600">
                                     Lucas é um exemplo de dedicação e superação, e ele nos conta como nossos recursos o ajudaram a aprender e crescer.
                                 </p>
                             </div>
-                        </div>
-                    </div>
-                    <div className="flex items-center justify-center mt-6">
-                        <Link to={"/historias"}>
-                            <button className="mx-auto lg:mx-0 hover:underline bg-blue-500 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
-                                Leia mais histórias
-                            </button>
-                        </Link>
-                    </div>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </section>
         </>
