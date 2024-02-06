@@ -10,7 +10,7 @@ function Home() {
 
     return (
         <>
-            <div style={{ backgroundImage: `url('src/assets/img/teste.jpg')` }} className="bg-cover bg-center h-screen">
+            <div style={{ backgroundImage: `url(https://ik.imagekit.io/0h4imb0ky/img/teste.jpg?updatedAt=1707248099703)` }} className="bg-cover bg-center h-screen">
                 <div className="container px-3 mx-auto flex items-center h-full">
                     <div className="flex w-2/5 text-left ml-auto">
                         <div className="flex flex-col items-center justify-center h-full">
@@ -46,12 +46,12 @@ function Home() {
                             </p>
                         </div>
                         <div className="w-1/2 p-6">
-                            <img src="src\assets\img\Justice-pana.svg" className="h-80" />
+                            <img src="https://ik.imagekit.io/0h4imb0ky/img/Justice-pana.svg?updatedAt=1707248098348" className="h-80" />
                         </div>
                     </div>
                     <div className="flex flex-wrap flex-row items-center">
                         <div className="w-1/2 p-6">
-                            <img src="src\assets\img\Future city-cuate.svg" className="h-80" />
+                            <img src="https://ik.imagekit.io/0h4imb0ky/img/Future%20city-cuate.svg?updatedAt=1707248097426" className="h-80" />
                         </div>
                         <div className="w-1/2 p-6 mt-6">
                             <div className="align-middle">

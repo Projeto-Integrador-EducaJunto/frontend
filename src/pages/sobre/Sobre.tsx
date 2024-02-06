@@ -25,7 +25,7 @@ function Sobre() {
                 </h2>
                 <div className="flex flex-wrap justify-center items-center mx-2 my-10 gap-10">
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
-                        <img src="src/assets/img/brusobre.jpg" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <img src="https://ik.imagekit.io/0h4imb0ky/img/brusobre.jpg?updatedAt=1707248097790" alt="Bruno Cesar" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-xl text-orange-500">Bruno Cesar</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
@@ -39,7 +39,7 @@ function Sobre() {
                         </div>
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
-                        <img src="src/assets/img/desobre.jpg" alt="Débora Rodrigues" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <img src="https://ik.imagekit.io/0h4imb0ky/img/desobre.jpg?updatedAt=1707248097286" alt="Débora Rodrigues" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-xl text-orange-500">Débora Rodrigues</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
@@ -53,7 +53,7 @@ function Sobre() {
                         </div>
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
-                        <img src="src/assets/img/gabsobre.jpeg" alt="Gabriel Sponda" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <img src="https://ik.imagekit.io/0h4imb0ky/img/gabsobre.jpeg?updatedAt=1707248097397" alt="Gabriel Sponda" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-xl text-orange-500">Gabriel Sponda</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
@@ -67,7 +67,7 @@ function Sobre() {
                         </div>
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
-                        <img src="src/assets/img/guisobre.jpg" alt="Guilherme Góes" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <img src="https://ik.imagekit.io/0h4imb0ky/img/guisobre.jpg?updatedAt=1707248098222" alt="Guilherme Góes" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-xl text-orange-500">Guilherme Góes</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
@@ -81,7 +81,7 @@ function Sobre() {
                         </div>
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl  p-4">
-                        <img src="src/assets/img/pesobre.jpg" alt="Pedro Bernardo" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <img src="https://ik.imagekit.io/0h4imb0ky/img/pesobre.jpg?updatedAt=1707248098965" alt="Pedro Bernardo" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-xl text-orange-500">Pedro Bernardo</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />
@@ -95,7 +95,7 @@ function Sobre() {
                         </div>
                     </div>
                     <div className="flex justify-center items-center flex-col w-1/8  h-full gap-4 bg-slate-100  border-2 border-gray-300 shadow-md text-white rounded-2xl p-4">
-                        <img src="src/assets/img/vicsobre.png" alt="Victória Moraes" className="rounded-full h-24 w-24 object-cover mb-3" />
+                        <img src="https://ik.imagekit.io/0h4imb0ky/img/vicsobre.png?updatedAt=1707248099434" alt="Victória Moraes" className="rounded-full h-24 w-24 object-cover mb-3" />
                         <p className="font-bold text-xl text-orange-500">Victória Moraes</p>
                         <p className=" text-black">Desenvolvedor Java Fullstack</p>
                         <hr className="border-blue-400 w-full" />

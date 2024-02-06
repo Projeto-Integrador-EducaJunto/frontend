@@ -11,7 +11,7 @@ function Footer() {
                 <div className="w-full flex flex-row py-6">
                     <div className="flex-1 mb-6 text-white mr-20">
                         <Link to="/home" className="text-white">
-                            <img src="src\assets\img\logoNavbar.svg" className="h-10" />
+                            <img src="https://ik.imagekit.io/0h4imb0ky/img/logoNavbar.svg?updatedAt=1707248099251" className="h-10" />
                         </Link>
                     </div>
                     <div className="flex-1">
