@@ -56,27 +56,27 @@ function Navbar() {
                         <img src="https://ik.imagekit.io/0h4imb0ky/img/logoNavbar.svg?updatedAt=1707248099251" className="h-10" />
                     </Link>
                     <ul className="flex items-center ml-20 font-bold">
-                        <li className="mr-6">
-                            <Link to="/home">
-                                Home
-                            </Link>
-                        </li>
-                        <li className="mr-6">
-                            <Link to="/sobre">
-                                Sobre nós
-                            </Link>
-                        </li>
-                        <li className="mr-6">
-                            <Link to="/temas">
-                                Temas
-                            </Link>
-                        </li>
-                        <li className="mr-6">
-                            <Link to="/postagens">
-                                Postagens
-                            </Link>
-                        </li>
-                    </ul>
+    <li className="mr-6 group">
+        <Link to="/home" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+            Home
+        </Link>
+    </li>
+    <li className="mr-6 group">
+        <Link to="/sobre" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+            Sobre nós
+        </Link>
+    </li>
+    <li className="mr-6 group">
+        <Link to="/temas" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+            Temas
+        </Link>
+    </li>
+    <li className="mr-6 group">
+        <Link to="/postagens" className="block px-4 py-2 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:shadow-lg">
+            Postagens
+        </Link>
+    </li>
+</ul>
                 </div>
                 <div className="absolute right-16 top-1/2-translate-y-1/2">
                     <button onClick={toggleDropdown} className="p-2">
