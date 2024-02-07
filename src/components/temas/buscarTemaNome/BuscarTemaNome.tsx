@@ -36,7 +36,7 @@ function BuscarTemaNome() {
 
     useEffect(() => {
         if (token === '') {
-            toastAlert("Você precisa estar autenticado.", "")
+            toastAlert("Você precisa estar autenticado.", "info")
             navigate('/');
         }
     }, [token])
