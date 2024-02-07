@@ -58,19 +58,27 @@ function ListaPostagens() {
                     />
                 </div>
             )}
-            <div className='container mx-auto 
-                grid grid-rows-2 md:grid-rows-2 lg:grid-rows-4 gap-4 p-32 hover: bg-grid-rows-6 w-2/4'
-            >
-                <Link to="/BuscarPostagem">
-                    <button>buscar</button>
-                </Link>
+            <div className="py-20">
+                <div className='grid grid-cols-4 my-5'>
+                    <div></div>
+                    <div className='col-span-2 '>
+                        <Link to="/BuscarPostagem" className='w-full rounded-xl text-slate-100 bg-opacity-90 bg-blue-400  hover:bg-blue-600 flex items-center justify-center py-2'>
+                            <button className='action-button '>Buscar Postagens</button>
+                        </Link>
+                    </div>
+                    <div></div>
+                </div>
+                <div className='container mx-auto 
+                grid grid-rows-2 md:grid-rows-2 lg:grid-rows-4 gap-4 hover: bg-grid-rows-6 w-2/4'
+                >
 
 
-                {postagens.map((postagem) => (
-                    <CardPostagens key={postagem.id} postagem={postagem} />
-                ))}
+                    {postagens.map((postagem) => (
+                        <CardPostagens key={postagem.id} postagem={postagem} />
+                    ))}
 
 
+                </div>
             </div>
         </>
     );
