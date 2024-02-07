@@ -13,7 +13,7 @@ import FormPostagem from "./components/postagens/formPostagem/FormPostagem"
 import ListaPostagens from "./components/postagens/listaPostagens/listaPostagens"
 import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem"
 import Historias from "./pages/historias/Historias"
-import Perfil from "./pages/perfil/Perfil"
+// import Perfil from "./pages/perfil/Perfil"
 import Atualizar from "./pages/atualizar/Atualizar"
 import SobreOds from "./pages/ods/SobreOds"
 import { ToastContainer } from 'react-toastify'
@@ -38,7 +38,7 @@ function App() {
               <Route path="/atualizarPerfil/:id" element={<Atualizar />} />
               <Route path="/home" element={<Home />} />
 
-              <Route path="/perfil" element={<Perfil />} />
+              {/* <Route path="/perfil" element={<Perfil />} /> */}
               <Route path="/sobre" element={<Sobre />} />
 
               <Route path="/cadastrarTema" element={<FormTema />} />
