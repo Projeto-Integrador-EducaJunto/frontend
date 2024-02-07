@@ -20,7 +20,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import BuscarPostagem from "./components/postagens/buscarPostagem/BuscarPostagem"
 import BuscarTemaNome from "./components/temas/buscarTemaNome/BuscarTemaNome"
-import BuscarTemaDescricao from "./components/temas/buscarTemaDescricao/buscarTemaDescricao"
+import BuscarTemaDescricao from "./components/temas/buscarTemaDescricao/BuscarTemaDescricao"
 
 function App() {
 
