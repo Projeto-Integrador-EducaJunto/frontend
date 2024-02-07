@@ -19,6 +19,8 @@ import SobreOds from "./pages/ods/SobreOds"
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import BuscarPostagem from "./components/postagens/buscarPostagem/BuscarPostagem"
+import BuscarTemaNome from "./components/temas/buscarTemaNome/BuscarTemaNome"
+import BuscarTemaDescricao from "./components/temas/buscarTemaDescricao/buscarTemaDescricao"
 
 function App() {
 
@@ -43,12 +45,14 @@ function App() {
               <Route path="/deletarTema/:id" element={<DeletarTema />} />
               <Route path="/temas" element={<ListaTemas />} />
               <Route path="/editarTema/:id" element={<FormTema />} />
+              <Route path="/buscarTemaNome" element={<BuscarTemaNome />} />
+              <Route path="/buscarTemaDescricao" element={<BuscarTemaDescricao />} />
 
               <Route path="/postagens" element={<ListaPostagens />} />
               <Route path="/cadastrarPostagem" element={<FormPostagem />} />
               <Route path="/editarPostagem/:id" element={<FormPostagem />} />
               <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
-              <Route path="/BuscarPostagem" element={<BuscarPostagem />} />
+              <Route path="/buscarPostagem" element={<BuscarPostagem />} />
 
               <Route path="/historias" element={<Historias />} />
               <Route path="/ods" element={<SobreOds />} />

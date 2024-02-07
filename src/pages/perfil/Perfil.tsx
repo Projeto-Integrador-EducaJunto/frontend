@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext';
 import { toastAlert } from '../../utils/ToastAlerts'
-import CardPostUsuario from '../../components/postagens/ListaPostagensUser/ListaPostagensUser';
+import CardPostUsuario from '../../components/postagens/listaPostagensUser/ListaPostagensUser';
 import Postagem from '../../models/Postagem';
 import { buscar } from "../../services/Service";
 import { DNA } from "react-loader-spinner";

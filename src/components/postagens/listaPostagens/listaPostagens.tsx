@@ -62,7 +62,7 @@ function ListaPostagens() {
                 <div className='grid grid-cols-4 my-5'>
                     <div></div>
                     <div className='col-span-2 '>
-                        <Link to="/BuscarPostagem" className='w-full rounded-xl text-slate-100 bg-opacity-90 bg-blue-400  hover:bg-blue-600 flex items-center justify-center py-2'>
+                        <Link to="/buscarPostagem" className='w-full rounded-xl text-slate-100 bg-opacity-90 bg-blue-400  hover:bg-blue-600 flex items-center justify-center py-2'>
                             <button className='action-button '>Buscar Postagens</button>
                         </Link>
                     </div>
