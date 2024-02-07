@@ -7,7 +7,9 @@ import { DNA } from "react-loader-spinner";
 import { toastAlert } from "../../../utils/ToastAlerts";
 import CardPostagens from "../cardPostagens/CardPostagens";
 
- 
+
+
+
 function ListaPostagensUser() {
 
     const navigate = useNavigate();
