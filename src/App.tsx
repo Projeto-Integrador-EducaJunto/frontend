@@ -15,9 +15,10 @@ import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPosta
 import Historias from "./pages/historias/Historias"
 import Perfil from "./pages/perfil/Perfil"
 import Atualizar from "./pages/atualizar/Atualizar"
-import SobreOds from "./pages/ods/sobreOds"
+import SobreOds from "./pages/ods/SobreOds"
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import BuscarPostagem from "./components/postagens/buscarPostagem/BuscarPostagem"
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
           <Navbar />
           <div className={`min-h-[80vh]`}>
             <Routes>
-              <Route path="/" element={<Home />} /> 
+              <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/atualizarPerfil/:id" element={<Atualizar />} />
@@ -47,6 +48,7 @@ function App() {
               <Route path="/cadastrarPostagem" element={<FormPostagem />} />
               <Route path="/editarPostagem/:id" element={<FormPostagem />} />
               <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+              <Route path="/BuscarPostagem" element={<BuscarPostagem />} />
 
               <Route path="/historias" element={<Historias />} />
               <Route path="/ods" element={<SobreOds />} />

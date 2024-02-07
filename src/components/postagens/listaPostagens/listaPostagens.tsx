@@ -6,6 +6,7 @@ import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
 import { toastAlert } from "../../../utils/ToastAlerts";
 import CardPostagens from "../cardPostagens/CardPostagens";
+import { Link } from "react-router-dom";
 
 function ListaPostagens() {
 
@@ -47,19 +48,22 @@ function ListaPostagens() {
         <>
             {postagens.length === 0 && (
                 <div className="flex justify-center items-center h-screen">
-                <DNA
-                    visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
-                />
+                    <DNA
+                        visible={true}
+                        height="200"
+                        width="200"
+                        ariaLabel="dna-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="dna-wrapper mx-auto"
+                    />
                 </div>
             )}
             <div className='container mx-auto 
                 grid grid-rows-2 md:grid-rows-2 lg:grid-rows-4 gap-4 p-32 hover: bg-grid-rows-6 w-2/4'
             >
+                <Link to="/BuscarPostagem">
+                    <button>buscar</button>
+                </Link>
 
 
                 {postagens.map((postagem) => (
