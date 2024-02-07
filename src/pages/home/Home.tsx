@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import './Home.css';
-import { EffectCards } from 'swiper/modules';
 import { Link } from "react-router-dom";
+import { EffectCards, Navigation } from 'swiper/modules';
 
 function Home() {
 
@@ -147,11 +147,15 @@ function Home() {
                     </h1>
 
                     <Swiper
-                        effect={'cards'}
-                        grabCursor={true}
-                        modules={[EffectCards]}
-                        className="mySwiper"
-                    >
+                    effect={'cards'}
+                    grabCursor={true}
+                    modules={[EffectCards, Navigation]}
+                    className="mySwiper flex justify-center items-center"
+                    navigation={{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }}
+                >
                         <SwiperSlide>
                             <div className="flex flex-col">
                                 <h2 className="text-2xl font-bold text-gray-800 mb-2">João Silva</h2>
@@ -208,6 +212,8 @@ function Home() {
                                 </p>
                             </div>
                         </SwiperSlide>
+                        <div className="swiper-button-prev bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md absolute left-[-125px] z-10 cursor-pointer">‹</div>
+                        <div className="swiper-button-next bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md absolute right-[-125px] z-10 cursor-pointer">›</div>
                     </Swiper>
                 </div>
             </section>
