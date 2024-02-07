@@ -21,9 +21,11 @@ function Home() {
                             <p className="leading-normal text-2xl mb-8 text-white backdrop-blur-sm" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
                                 A educação é a chave que abre as portas da igualdade e da democracia, reduzindo as disparidades e construindo um futuro mais justo para todos.
                             </p>
-                            <button className="mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 hover:scale-110 duration-300 hover:bg-orange-500 hover:text-white">
-                                Saiba mais
-                            </button>
+                            <a href="#historias">
+                                <button className="mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 hover:scale-110 duration-300 hover:bg-orange-500 hover:text-white">
+                                    Saiba mais
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +141,7 @@ function Home() {
             </section>
 
             <section className="py-8 bg-orange-500">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-4" id="historias">
                     <h1 className="text-5xl font-bold leading-tight text-center text-white mb-12" style={{ textShadow: '2px 2px 1px rgba(0, 0, 0, 0.5)' }}>
                         Histórias de Sucesso
                     </h1>

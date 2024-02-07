@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 function SobreOds() {
     return (
         <>
-            <section className="bg-blue-500 border-b rounded-lg py-8 ">
+
+            <section className="bg-blue-500 border-b py-8 ">
                 <div className="container mx-auto grid grid-cols-4 pt-4 pb-12">
                     <div></div>
                     <div className="w-full md:w-1/3 lg:w-full my-20 rounded col-span-2 flex flex-col">
@@ -33,6 +35,13 @@ function SobreOds() {
 
                     </div>
                     <div></div>
+                </div>
+                <div className="flex items-center justify-center">
+                    <Link to="https://brasil.un.org/pt-br/sdgs/4" target="_blank">
+                        <button className="bg-orange-500 mx-auto lg:mx-0 hover:underline text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:scale-105 duration-300">
+                            Descubra Mais
+                        </button>
+                    </Link>
                 </div>
             </section>
         </>
