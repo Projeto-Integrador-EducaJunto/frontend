@@ -74,11 +74,13 @@ function Navbar() {
                         <div className="absolute right-0 mt-2 rounded-md shadow-lg bg-white text-black"
                              onMouseLeave={() => setShowDropdown(false)}>
                             <div className="py-1 w-48">
-                                {/* Aqui mantemos o menu dropdown */}
                                 {usuario.token ? (
                                     <>
                                         <Link to="/perfil" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</Link>
-                                        {/* Continuação dos links do dropdown */}
+                                        <Link to="/cadastrarPostagem" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Criar postagem</Link>
+                                        {usuario.usuario === "root@root.com" && (
+                                        <Link to="/cadastrarTema" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Criar tema</Link>
+                                        )}
                                         <button className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" onClick={logout}>Sair</button>
                                     </>
                                 ) : (
