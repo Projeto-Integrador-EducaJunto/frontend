@@ -10,7 +10,7 @@ import CardPostagens from "../cardPostagens/CardPostagens";
 
 
 
-function ListaPostagensUser() {
+function PostagensUsuario() {
 
     const navigate = useNavigate();
 
@@ -85,4 +85,4 @@ function ListaPostagensUser() {
     );
 }
 
-export default ListaPostagensUser;
+export default PostagensUsuario;

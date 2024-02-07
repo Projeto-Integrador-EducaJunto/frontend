@@ -2,8 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext';
 import { toastAlert } from '../../utils/ToastAlerts'
-// import ListaPostagensUser from '../../components/postagens/listaPostagensUser/ListaPostagensUser';
-import ListaPostagensUser from '../../components/postagens/listaPostagensUser/ListaPostagensUser';
+import PostagensUsuario from '../../components/postagens/postagensUsuario/PostagensUsuario';
 import Postagem from '../../models/Postagem';
 import { buscar } from "../../services/Service";
 import { DNA } from "react-loader-spinner";
@@ -130,8 +129,7 @@ const Perfil = () => {
                             />
                         </div>
                     )}
-                    {/* <ListaPostagensUser /> */}
-                    <ListaPostagensUser />
+                    <PostagensUsuario />
                 </section>
             </div >
         </>
